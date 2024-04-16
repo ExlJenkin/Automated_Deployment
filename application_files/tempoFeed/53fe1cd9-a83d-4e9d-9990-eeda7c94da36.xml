@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>c42b84a6-840f-487c-86cd-f1d10bc102b2</versionUuid>
+    <tempoFeed>
+        <uuid>53fe1cd9-a83d-4e9d-9990-eeda7c94da36</uuid>
+        <name>AUT News Feed</name>
+        <description>News Feed object for Automated Testing </description>
+        <showInCatalog>true</showInCatalog>
+        <systemFeed>false</systemFeed>
+    </tempoFeed>
+    <roleMap>
+        <role name="administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="c42b84a6-840f-487c-86cd-f1d10bc102b2"/>
+    </history>
+</tempoFeedHaul>

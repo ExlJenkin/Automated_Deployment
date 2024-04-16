@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26209</versionUuid>
+    <interface>
+        <name>AUT_GridContentsGrid</name>
+        <uuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26174</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!pagedGridData: todatasubset(
+    ri!gridData,
+    ri!gridSelection.pagingInfo
+  ),
+  #"SYSTEM_SYSRULES_gridField"(
+    label: ri!gridLabel,
+    labelPosition: "ABOVE",
+    totalCount: length(ri!gridData),
+    columns: #"SYSTEM_SYSRULES_forEach"(
+      items: ri!headers,
+      expression: #"SYSTEM_SYSRULES_gridTextColumn"(
+        label: ri!headers[fv!index],
+        data: index(local!pagedGridData.data, ri!headerFields[fv!index], ""),
+        field: ri!headerFields[fv!index]
+      )
+    ),
+    identifiers: local!pagedGridData.data.id,
+    value: ri!gridSelection,
+    saveInto: ri!gridSelection,
+    selectionStyle: "ROW_HIGHLIGHT",
+    selection: true,
+    validations: {}
+  )
+)</definition>
+        <namedTypedValue>
+            <name>gridSelection</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>gridData</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>headers</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>gridLabel</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>headerFields</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">#"SYSTEM_SYSRULES_gridSelection"(pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(1,-1))</a:value>
+                    <a:nameRef>gridSelection</a:nameRef>
+                    <a:id>1</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">{
+  {id: 1, value: "Value 1", description: "Description 1"},
+  {id: 2, value: "Value 2", description: "Description 2"},
+  {id: 3, value: "Value 3", description: "Description 3"},
+  {id: 4, value: "Value 4", description: "Description 4"},
+  {id: 5, value: "Value 5", description: "Description 5"}
+}</a:value>
+                    <a:nameRef>gridData</a:nameRef>
+                    <a:id>2</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">{"id", "", "description"}</a:value>
+                    <a:nameRef>headers</a:nameRef>
+                    <a:id>3</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">Example Grid</a:value>
+                    <a:nameRef>gridLabel</a:nameRef>
+                    <a:id>4</a:id>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">{"id", "value", "description"}</a:value>
+                    <a:nameRef>headerFields</a:nameRef>
+                    <a:id>5</a:id>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="_a-0000e332-b3b3-8000-af80-01ef9001ef90_26209"/>
+    </history>
+</contentHaul>

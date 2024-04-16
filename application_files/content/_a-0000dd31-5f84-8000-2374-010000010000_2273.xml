@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e573-a325-8000-905e-01ef9001ef90_7461</versionUuid>
+    <interface>
+        <name>AUT_ImagesSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2273</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!editableSelection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+      startIndex: 1,
+      batchSize: - 1
+    ),
+    selected: {}
+  ),
+  local!gridTextField: cast(
+    103,
+    {
+      ""
+    }
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "Images",
+    contents: #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_columnsLayout"(
+              columns: {
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_imageField_v1"(
+                      label: "ImageField",
+                      images: {
+                        #"SYSTEM_SYSRULES_documentImage"(
+                          document: #"SYSTEM_SYSRULES_iconIndicator"(
+                            "STATUS_NOTDONE"
+                          ),
+                          altText: "not done"
+                        ),
+                        #"SYSTEM_SYSRULES_documentImage"(
+                          document: #"SYSTEM_SYSRULES_iconIndicator"(
+                            "STATUS_OK"
+                          ),
+                          altText: "done"
+                        )
+                      }
+                    )
+
+                  }
+                ),
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_richTextDisplayField"(
+                      label: "RichTextField",
+                      value: {
+                        #"SYSTEM_SYSRULES_richTextImage"(
+                          image: #"SYSTEM_SYSRULES_documentImage"(
+                            document: #"SYSTEM_SYSRULES_iconIndicator"(
+                              icon: "PROGRESS_RUNNING"
+                            ),
+                            altText: "Active"
+                          )
+                        ),
+                        #"SYSTEM_SYSRULES_richTextImage"(
+                          #"SYSTEM_SYSRULES_documentImage"(
+                            document: #"SYSTEM_SYSRULES_iconIndicator"(
+                              "STATUS_NOTDONE"
+                            ),
+                            altText: "not done"
+                          )
+                        )
+                      }
+                    )
+                  }
+                ),
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_linkField"(
+                      label: "Download Below",
+                      links: #"SYSTEM_SYSRULES_documentDownloadLink"(
+                        label: "Document Download",
+                        document: #"SYSTEM_SYSRULES_iconIndicator"(
+                          "STATUS_NOTDONE"
+                        )
+                      )
+                    )
+                  }
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_gridLayout"(
+              label: "ImageGrid",
+              headerCells: {
+                #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+                  label: "TextField"
+                ),
+                #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+                  label: "ImageField"
+                )
+              },
+              columnConfigs: {},
+              rows: {
+                #"SYSTEM_SYSRULES_applyComponents"(
+                  #"18482014-914b-453e-8fa0-b94d75e5982e"(
+                    index: _
+                  ),
+                  enumerate(
+                    count(
+                      local!gridTextField
+                    )
+                  ) + 1
+                )
+              },
+              selectionvalue: local!editableSelection.selected,
+              selectionSaveInto: local!editableSelection.selected,
+              selectable: true,
+              addrowlink: #"SYSTEM_SYSRULES_dynamicLink"(
+                label: "Add Data to Paging Grid",
+                value: "",
+                saveInto: {
+                  a!save(
+                    target: local!gridTextField,
+                    value: append(
+                      local!gridTextField,
+                      cast(
+                        3,
+                        null
+                      )
+                    )
+                  )
+                }
+              ),
+              validations: {}
+            ),
+            #"SYSTEM_SYSRULES_gaugeField"(
+              label: "GaugeField",
+              percentage: 70
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_documentViewerField"(
+              label: "DocumentViewerField",
+              height: "SHORT"
+            ),
+            #"SYSTEM_SYSRULES_columnsLayout"(
+              columns: {
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: #"SYSTEM_SYSRULES_stampField"(
+                    label: "StampField Label",
+                    text: "firstStampFieldText",
+                    size: "TINY"
+                  )
+                ),
+                #"SYSTEM_SYSRULES_columnLayout"(
+                  contents: #"SYSTEM_SYSRULES_stampField"(
+                    label: "StampField Label",
+                    icon: "STAR",
+                    text: "secondStampFieldText",
+                    size: "TINY",
+                    tooltip: "stampFieldTooltip"
+                  )
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_signatureField"(
+              label: "My Signature Label",
+              labelPosition: "COLLAPSED",
+              target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+              saveInto: {}
+            )
+          }
+        )
+      }
+    )
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47574"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491101"/>
+        <historyInfo versionUuid="_a-0000dfc1-e2a2-8000-9ba2-011c48011c48_1154306"/>
+        <historyInfo versionUuid="_a-0000e000-ce26-8000-acf5-01ef9001ef90_23436"/>
+        <historyInfo versionUuid="_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25569"/>
+        <historyInfo versionUuid="_a-0000e133-a6be-8000-69d8-01ef9001ef90_21907"/>
+        <historyInfo versionUuid="_a-0000e2f5-ad2a-8000-a91f-01ef9001ef90_26086"/>
+        <historyInfo versionUuid="_a-0000e423-4162-8000-3e0e-acef90acef90_8433"/>
+        <historyInfo versionUuid="_a-0000e570-d277-8000-d7fa-01ef9001ef90_7324"/>
+        <historyInfo versionUuid="_a-0000e573-a325-8000-905e-01ef9001ef90_7310"/>
+        <historyInfo versionUuid="_a-0000e573-a325-8000-905e-01ef9001ef90_7434"/>
+        <historyInfo versionUuid="_a-0000e573-a325-8000-905e-01ef9001ef90_7461"/>
+    </history>
+</contentHaul>

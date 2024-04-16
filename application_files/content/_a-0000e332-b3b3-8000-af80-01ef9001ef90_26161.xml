@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26254</versionUuid>
+    <interface>
+        <name>AUT_GetContentsSection</name>
+        <uuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26161</uuid>
+        <description>Get contents test</description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!table1Data: {
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"}
+  },
+  local!table1Selection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(startIndex: 1, batchSize: 5)
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Grids",
+    firstColumnContents: {
+      #"_a-0000e332-b3b3-8000-af80-01ef9001ef90_26174"(
+        gridLabel: "Standard Grid",
+        gridSelection: local!table1Selection,
+        gridData: local!table1Data,
+        headers: {"id", "value", "description"},
+        headerFields: {"id", "value", "description"}
+      ),
+      #"_a-0000e332-b3b3-8000-af80-01ef9001ef90_26174"(
+        gridLabel: "Abnormal Labels",
+        gridSelection: local!table1Selection,
+        gridData: local!table1Data,
+        headers: {"id", "", "id"},
+        headerFields: {"id", "value", "description"}
+      )
+      /* TODO - Editable Grid */
+      /* TODO - New Grid */
+    },
+    secondColumnContents: {}
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e332-b3b3-8000-af80-01ef9001ef90_26254"/>
+    </history>
+</contentHaul>

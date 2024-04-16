@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26180</versionUuid>
+    <interface>
+        <name>AUT_RowHighlightGrid</name>
+        <uuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26140</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!pagedGridData: todatasubset(
+    ri!gridData,
+    ri!gridSelection.pagingInfo
+  ),
+  #"SYSTEM_SYSRULES_gridField"(
+    label: "RowHighlightGrid",
+    labelPosition: "ABOVE",
+    totalCount: length(ri!gridData),
+    columns: {
+      #"SYSTEM_SYSRULES_gridTextColumn"(
+        label: "Column Label 1",
+        data: local!pagedGridData.data.value,
+        field: "value"
+      ),
+      #"SYSTEM_SYSRULES_gridTextColumn"(
+        label: "Column Label 2",
+        data: local!pagedGridData.data.description,
+        field: "description"
+      )
+    },
+    identifiers: local!pagedGridData.data.id,
+    value: ri!gridSelection,
+    saveInto: ri!gridSelection,
+    selectionStyle: "ROW_HIGHLIGHT",
+    selection: true,
+    validations: {}
+  )
+)</definition>
+        <namedTypedValue>
+            <name>gridSelection</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>gridData</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26180"/>
+    </history>
+</contentHaul>

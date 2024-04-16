@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e312-f844-8000-f43a-01ef9001ef90_25963</versionUuid>
+    <interface>
+        <name>AUT_FieldLocatorSection</name>
+        <uuid>_a-0000e30d-de85-8000-fd2a-01ef9001ef90_24593</uuid>
+        <description>Test field locators using placeholder, label, or tooltip</description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!placeholderTextField,
+  local!instructionsTextField,
+  local!tooltipTextField,
+  local!placeholderParagraphField,
+  local!instructionsParagraphField,
+  local!tooltipParagraphField,
+  local!placeholderPickerField,
+  local!instructionsPickerField,
+  local!tooltipPickerField,
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "Field Locators",
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            width: "NARROW",
+            contents: {
+              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                labelPosition: "COLLAPSED",
+                align: "RIGHT",
+                value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                  text: "Text",
+                  style: "STRONG"
+                )
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_textField"(
+                label: "",
+                labelPosition: "COLLAPSED",
+                placeholder: "text placeholder",
+                value: local!placeholderTextField,
+                saveInto: local!placeholderTextField
+              ),
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_textField"(
+                label: "",
+                labelPosition: "COLLAPSED",
+                instructions: "text instructions",
+                value: local!instructionsTextField,
+                saveInto: local!instructionsTextField
+              ),
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_textField"(
+                label: "",
+                helpTooltip: "text tooltip",
+                value: local!tooltipTextField,
+                saveInto: local!tooltipTextField
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            width: "NARROW",
+            contents: {
+              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                labelPosition: "COLLAPSED",
+                align: "RIGHT",
+                value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                  text: "Paragraph",
+                  style: "STRONG"
+                )
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "",
+                labelPosition: "COLLAPSED",
+                placeholder: "paragraph placeholder",
+                value: local!placeholderParagraphField,
+                saveInto: local!placeholderParagraphField
+              ),
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "",
+                labelPosition: "COLLAPSED",
+                instructions: "paragraph instructions",
+                value: local!instructionsParagraphField,
+                saveInto: local!instructionsParagraphField
+              ),
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "",
+                helpTooltip: "paragraph tooltip",
+                value: local!tooltipParagraphField,
+                saveInto: local!tooltipParagraphField
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            width: "NARROW",
+            contents: {
+              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                labelPosition: "COLLAPSED",
+                align: "RIGHT",
+                value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                  text: "Picker",
+                  style: "STRONG"
+                )
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_pickerFieldCustom"(
+                labelPosition: "COLLAPSED",
+                placeholder: "picker placeholder",
+                suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+                selectedLabels: local!placeholderPickerField,
+                value: local!placeholderPickerField,
+                saveInto: local!placeholderPickerField,
+                validations: {}
+              ),
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_pickerFieldCustom"(
+                labelPosition: "COLLAPSED",
+                instructions: "picker instructions",
+                suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+                selectedLabels: local!instructionsPickerField,
+                value: local!instructionsPickerField,
+                saveInto: local!instructionsPickerField,
+                validations: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_pickerFieldCustom"(
+                helpTooltip: "picker tooltip",
+                suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+                selectedLabels: local!tooltipPickerField,
+                value: local!tooltipPickerField,
+                saveInto: local!tooltipPickerField,
+                validations: {}
+              )
+            }
+          )
+        }
+      ),
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e30d-de85-8000-fd2a-01ef9001ef90_24612"/>
+        <historyInfo versionUuid="_a-0000e312-f844-8000-f43a-01ef9001ef90_25963"/>
+    </history>
+</contentHaul>

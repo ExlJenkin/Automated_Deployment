@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491109</versionUuid>
+    <interface>
+        <name>AUT_removableRowsGrid</name>
+        <uuid>45a60d5e-1f2d-4495-a0ca-b425ea926a1e</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!items: {
+    {id: null, summary: "Item 1"},
+    {id: null, summary: "Item 2"},
+    {id: null, summary: "Item 3"}
+  },
+  /* Needed when adding or removing items via a!applyComponents `*/
+  local!itemsToken,
+  #"SYSTEM_SYSRULES_gridLayout"(
+    label: "RemovableRowsGrid",
+    totalCount: count(local!items),
+    headerCells: {
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "Summary"),
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: ""),
+      /* For the "Remove" column */
+      #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "")
+    },
+    /*` Only needed when some columns need to be narrow `*/
+    columnConfigs: {
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "DISTRIBUTE"),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "ICON"),
+      #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(width: "ICON")
+    },
+    rows: #"SYSTEM_SYSRULES_applyComponents"(
+      function: #"fc90c4c5-a2b3-4aa6-aee1-10990bf2b545"(
+        items: local!items,
+        index: _,
+        itemsToken: local!itemsToken
+      ),
+      array: if(or(isnull(local!items), count(local!items) &lt; 1), {}, 1+enumerate(count(local!items))),
+      arrayVariable: local!itemsToken
+    )
+    /*addRowlink: a!dynamicLink(*/
+    /*  label: "Add Item",*/
+      /*`
+       * For your use case, set the value to a blank instance of your CDT using
+       * the type constructor, e.g. type!PurchaseRequestItem(). Only specify the field
+       * if you want to give it a default value e.g. due: today()+1.
+       `*/
+    /*  value: {id: null, summary: "Item " &amp; length(local!items)+1},*/
+    /*  saveInto: {*/
+    /*    a!save(local!items, append(local!items, save!value)),*/
+        /*` When modifying the size of the array used in a!applyComponents, `*/
+        /*` make the same change in the "token" array variable              `*/
+    /*    a!save(local!itemsToken, append(local!itemsToken, save!value))*/
+    /*  }*/
+    /*)*/
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47592"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491109"/>
+    </history>
+</contentHaul>

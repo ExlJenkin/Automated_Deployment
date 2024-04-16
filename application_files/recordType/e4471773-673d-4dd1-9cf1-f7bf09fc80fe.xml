@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>aaede31d-5f86-4996-aa4e-d4b68529b43e</versionUuid>
+  <recordType a:uuid="e4471773-673d-4dd1-9cf1-f7bf09fc80fe" name="Automated Test Dialog Box">
+    <a:pluralName>Automated Testing Records Dialog Box</a:pluralName>
+    <a:description>Records for the Automated testing application opens actions in dialog box.</a:description>
+    <a:urlStub>jlkXNQ</a:urlStub>
+    <a:source
+      a:uuid="74a2f58d-a860-4446-9e88-73d6d983f9d0@_a-0000dc59-a427-8000-ba62-01ef9001ef90_2437" xsi:type="a:DataStoreEntity"/>
+    <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridField"(
+  columns: {
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Test Text",
+      sortField: #"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testText",
+      value: #"SYSTEM_SYSRULES_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+          label: fv!row[#"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testText"],
+          recordType: #"urn:appian:record-type:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe",
+          identifier: fv!identifier
+        )
+      ),
+      width: "1X"
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Test Int",
+      sortField: #"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testInt",
+      value: tointeger(
+        fv!row[#"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testInt"]
+      ),
+      align: "END",
+      width: "1X"
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Test Decimal",
+      sortField: #"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testDecimal",
+      value: todecimal(
+        fv!row[#"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testDecimal"]
+      ),
+      align: "END",
+      width: "1X"
+    ),
+    #"SYSTEM_SYSRULES_gridColumn"(
+      label: "Test ID",
+      sortField: #"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testID",
+      value: tointeger(
+        fv!row[#"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testID"]
+      ),
+      align: "END",
+      width: "1X"
+    )
+  },
+  pageSize: 50,
+  initialSorts: {
+    #"SYSTEM_SYSRULES_sortInfo"(
+      field: #"urn:appian:record-field:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/testText",
+      ascending: fn!true()
+    )
+  },
+  shadeAlternateRows: true
+)</a:listViewTemplateExpr>
+    <a:detailViewCfg>
+      <a:nameExpr>#"SYSTEM_SYSRULES_rtd_getDefaultSummaryViewName"()</a:nameExpr>
+      <a:uiExpr>#"_a-0000e173-5155-8000-8912-01ef9001ef90_22681"()</a:uiExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:urlStub>summary</a:urlStub>
+      <a:headerExpr/>
+      <a:relatedActionCfg>refId-7ee8cdf7-21ed-4ad9-a9d8-6b45ea71fe4a</a:relatedActionCfg>
+      <a:recordActionLaunchType>DIALOG</a:recordActionLaunchType>
+      <a:recordUiSecurityType>EXPRESSION</a:recordUiSecurityType>
+    </a:detailViewCfg>
+    <a:relatedActionCfg a:uuid="7ee8cdf7-21ed-4ad9-a9d8-6b45ea71fe4a">
+      <a:target a:uuid="0004e173-5f76-8000-8911-014d98014d98" xsi:type="a:ProcessModel"/>
+      <a:contextExpr>{}</a:contextExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:iconId>f0e7</a:iconId>
+      <a:refId>refId-7ee8cdf7-21ed-4ad9-a9d8-6b45ea71fe4a</a:refId>
+      <a:staticTitleString>Open Dialog Box</a:staticTitleString>
+      <a:staticDescriptionString/>
+      <a:referenceKey>openDialogBox</a:referenceKey>
+      <a:dialogSize>LARGE</a:dialogSize>
+      <a:showInRecordList>false</a:showInRecordList>
+      <a:recordUiSecurityType>EXPRESSION</a:recordUiSecurityType>
+    </a:relatedActionCfg>
+    <a:isSystem>false</a:isSystem>
+    <a:dataSrcExpr/>
+    <a:facetsListExpr/>
+    <a:titleExpr/>
+    <a:defaultFiltersExpr/>
+    <a:layoutType>GRID</a:layoutType>
+    <a:security>16383</a:security>
+    <a:hideLatestNews>false</a:hideLatestNews>
+    <a:hideNewsView>false</a:hideNewsView>
+    <a:hideRelatedActionsView>false</a:hideRelatedActionsView>
+    <a:isExportable>true</a:isExportable>
+    <a:listViewSrcExpr/>
+    <a:recordViewSrcExpr/>
+    <a:recordTypeSearchCfg>
+      <searchFieldsSrc>DEFAULT</searchFieldsSrc>
+      <placeholderSrc>DEFAULT</placeholderSrc>
+      <placeholder/>
+    </a:recordTypeSearchCfg>
+    <a:iconId/>
+    <a:listAutoRefreshInterval>0.0</a:listAutoRefreshInterval>
+    <a:enabledFeatures>255</a:enabledFeatures>
+    <a:isVisibleInRecordTypeList>true</a:isVisibleInRecordTypeList>
+    <a:recordActionLaunchType>DIALOG</a:recordActionLaunchType>
+    <a:showSearchBox>true</a:showSearchBox>
+    <a:isVisibleInDataFabric>false</a:isVisibleInDataFabric>
+    <a:usesRollingSyncLimit>false</a:usesRollingSyncLimit>
+  </recordType>
+  <roleMap>
+    <role name="record_type_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+      </groups>
+    </role>
+    <role name="record_type_viewer">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="a16ad1c0-d739-49f5-bee8-d50681ea8e74"/>
+    <historyInfo versionUuid="aaede31d-5f86-4996-aa4e-d4b68529b43e"/>
+  </history>
+  <migrationVersion>1</migrationVersion>
+</recordTypeHaul>

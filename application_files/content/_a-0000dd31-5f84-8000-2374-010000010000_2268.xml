@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491100</versionUuid>
+    <interface>
+        <name>AUT_ValidationsSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2268</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!validationField,
+  local!requiredField,
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Validations",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "RequiredField",
+        value: local!requiredField,
+        saveInto: local!requiredField,
+        required: true
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_integerField"(
+        label: "ValidationField",
+        value: local!validationField,
+        instruction: "Enter an even positive number",
+        saveInto: local!validationField,
+        validations: {
+          if(
+            and(
+              not(
+                isnull(
+                  local!validationField
+                )
+              ),
+              local!validationField &lt; 0
+            ),
+            "Value must be greater than 0",
+            null
+          ),
+          if(
+            and(
+              not(
+                isnull(
+                  local!validationField
+                )
+              ),
+              mod(
+                local!validationField,
+                2
+              ) = 0
+            ),
+            null,
+            "Value must be even"
+          )
+        }
+      )
+    },
+    validations: {
+      #"SYSTEM_SYSRULES_validationMessage"(
+        message: if(
+          isnull(
+            local!requiredField
+          ),
+          "RequiredField is required",
+          null
+        ),
+        validateAfter: "SUBMIT"
+      ),
+      #"SYSTEM_SYSRULES_validationMessage"(
+        message: if(
+          local!validationField = "valid",
+          null,
+          "ValidationField is invalid"
+        ),
+        validateAfter: "SUBMIT"
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47562"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491100"/>
+    </history>
+</contentHaul>

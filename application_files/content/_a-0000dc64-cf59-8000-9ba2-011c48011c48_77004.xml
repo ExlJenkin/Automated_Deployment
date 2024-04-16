@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491093</versionUuid>
+    <interface>
+        <name>AUT_TestFormRow</name>
+        <uuid>_a-0000dc64-cf59-8000-9ba2-011c48011c48_77004</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_gridRowLayout"(
+  contents: {
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridTextField, ri!index, null),
+      saveInto: local!gridTextField[ri!index],
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_paragraphField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridParagraphField, ri!index, null),
+      saveInto: local!gridParagraphField[ri!index],
+      refreshAfter: "UNFOCUS",
+      height: "MEDIUM",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_encryptedTextField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridEncryptedTextField, ri!index, null),
+      saveInto: local!gridEncryptedTextField[ri!index],
+      refreshAfter: "UNFOCUS"
+    ),
+    #"SYSTEM_SYSRULES_integerField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridIntegerField, ri!index, null),
+      saveInto: local!gridIntegerField[ri!index],
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_floatingPointField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridDecimalField, ri!index, null),
+      saveInto: local!gridDecimalField[ri!index],
+      refreshAfter: "UNFOCUS",
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_dateField"(
+      label: "Label",
+      labelPosition: "ABOVE",
+      value: index(local!gridDateField, ri!index, null),
+      saveInto: local!gridDateField[ri!index],
+      validations: {}
+    )
+  }
+)</definition>
+        <namedTypedValue>
+            <name>index</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47520"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491093"/>
+    </history>
+</contentHaul>

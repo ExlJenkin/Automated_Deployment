@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>3c5d5a31-74eb-4e33-937e-29097f16b0d6</versionUuid>
+    <webApi a:uuid="5140705a-e034-4348-b5e8-a2e617a5a04d" name="AUT_GenerateData">
+        <a:description></a:description>
+        <a:expression>#"SYSTEM_SYSRULES_httpResponse"(
+  headers: {
+    #"SYSTEM_SYSRULES_httpHeader"(name: "content-type", value: "application/json")
+  },
+  statusCode: 200,
+  body: 
+  ***
+  {"com":{"companyName":"Company Name","username":"Username"}}
+  ***
+)</a:expression>
+        <a:urlAlias>generate-data</a:urlAlias>
+        <a:httpMethod>GET</a:httpMethod>
+        <a:system>false</a:system>
+        <a:requestBodyType>NONE</a:requestBodyType>
+        <a:loggingEnabled>false</a:loggingEnabled>
+    </webApi>
+    <roleMap>
+        <role name="web_api_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:body/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="c6f3f4ba-a507-414d-acb5-9e8314fa815b"/>
+        <historyInfo versionUuid="5f06bc8a-9878-4520-a89a-d115de893c3b"/>
+        <historyInfo versionUuid="3c5d5a31-74eb-4e33-937e-29097f16b0d6"/>
+    </history>
+</webApiHaul>

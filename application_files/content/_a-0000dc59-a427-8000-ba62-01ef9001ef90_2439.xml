@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491085</versionUuid>
+    <interface>
+        <name>AUT_TestDataInputRecord</name>
+        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2439</uuid>
+        <description>Record of the Data input CDT</description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#"SYSTEM_SYSRULES_formLayout"(
+  label: "Automated Testing Data Input",
+  firstColumnContents: {
+    /*a!textField(
+      label: "Past",
+      labelPosition: "ADJACENT",
+      value: and(
+        ri!testData.testDateTime &gt; datetime(1900, 1, 1),
+        ri!testData.testDateTime &lt; now()
+      ),
+      readonly: true,
+      validations: {}
+    ),
+    a!textField(
+      label: "Future",
+      labelPosition: "ADJACENT",
+      value: and(
+        ri!testData.testDateTime &gt; now(),
+        ri!testData.testDateTime &lt; datetime(2090, 12, 31)
+      ),
+      readonly: true,
+      validations: {}
+    ),*/
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Title",
+      labelPosition: "ADJACENT",
+      value: ri!testData.testText,
+      readonly: true,
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_integerField"(
+      label: "Quantity",
+      labelPosition: "ADJACENT",
+      value: ri!testData.testInt,
+      readonly: true,
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_floatingPointField"(
+      label: "Price",
+      labelPosition: "ADJACENT",
+      value: ri!testData.testDecimal,
+      readonly: true,
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_dateTimeField"(
+      label: "Start Date",
+      labelPosition: "ADJACENT",
+      value: ri!testData.testDateTime,
+      readonly: true,
+      validations: {}
+    )
+  },
+  secondColumnContents: {
+    /* Add components here for a two-column form */
+  },
+  
+  validations: {}
+)</definition>
+        <namedTypedValue>
+            <name>testData</name>
+            <type>
+                <name>AUT_TestData</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47484"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491085"/>
+    </history>
+</contentHaul>

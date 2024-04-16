@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?><applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751592</versionUuid>
+    <application>
+        <name>Automated Testing</name>
+        <uuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49593</uuid>
+        <description/>
+        <parentUuid>SYSTEM_APPLICATIONS_ROOT</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <urlIdentifier>-Y7ICg</urlIdentifier>
+        <published>true</published>
+        <public>false</public>
+        <associatedObjects>
+            <globalIdMap>
+                <item>
+                    <type>datatype</type>
+                    <uuids>
+                        <uuid>{urn:com:appian:types}AUT_TestData</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>dataStore</type>
+                    <uuids>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2437</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>user</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>groupType</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>group</type>
+                    <uuids>
+                        <uuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</uuid>
+                        <uuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>content</type>
+                    <uuids>
+                        <uuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</uuid>
+                        <uuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056</uuid>
+                        <uuid>_a-0001dbef-826b-8000-9ba2-011c48011c48_56540</uuid>
+                        <uuid>_a-0001dbef-826b-8000-9ba2-011c48011c48_56539</uuid>
+                        <uuid>_a-0001dbef-826b-8000-9ba2-011c48011c48_56538</uuid>
+                        <uuid>_a-0001dbef-826b-8000-9ba2-011c48011c48_56537</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2435</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2439</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2442</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2444</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2445</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2449</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2450</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2452</uuid>
+                        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2453</uuid>
+                        <uuid>_a-0000dc64-cf59-8000-9ba2-011c48011c48_77004</uuid>
+                        <uuid>18482014-914b-453e-8fa0-b94d75e5982e</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2235</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2253</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2256</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2258</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2266</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2268</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2271</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2273</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2281</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2264</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2251</uuid>
+                        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2354</uuid>
+                        <uuid>_a-0000dd3b-7b3a-8000-9ba2-011c48011c48_63002</uuid>
+                        <uuid>_a-0000dd3b-7b3a-8000-9ba2-011c48011c48_63003</uuid>
+                        <uuid>_a-0000dd3b-7b3a-8000-9ba2-011c48011c48_64052</uuid>
+                        <uuid>45a60d5e-1f2d-4495-a0ca-b425ea926a1e</uuid>
+                        <uuid>fc90c4c5-a2b3-4aa6-aee1-10990bf2b545</uuid>
+                        <uuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26140</uuid>
+                        <uuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26166</uuid>
+                        <uuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26193</uuid>
+                        <uuid>_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25570</uuid>
+                        <uuid>_a-0000e173-5155-8000-8912-01ef9001ef90_22681</uuid>
+                        <uuid>_a-0000e1c6-5be9-8000-2440-01ef9001ef90_3498</uuid>
+                        <uuid>_a-0000e30d-de85-8000-fd2a-01ef9001ef90_24593</uuid>
+                        <uuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26161</uuid>
+                        <uuid>_a-0000e332-b3b3-8000-af80-01ef9001ef90_26174</uuid>
+                        <uuid>_a-0000e369-e85b-8000-e426-01ef9001ef90_26072</uuid>
+                        <uuid>_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31507</uuid>
+                        <uuid>_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31399</uuid>
+                        <uuid>_a-0000e632-39e5-8000-1692-01ef9001ef90_32615</uuid>
+                        <uuid>_a-0000e721-c88a-8000-b669-01ef9001ef90_33382</uuid>
+                        <uuid>_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45794</uuid>
+                        <uuid>_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45806</uuid>
+                        <uuid>_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7838</uuid>
+                        <uuid>_a-0000eba5-7372-8000-9ba4-011c48011c48_7954</uuid>
+                        <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751587</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>forum</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>processModelFolder</type>
+                    <uuids>
+                        <uuid>_g-0000dc59-c9a6-8000-ba62-014d98014d98_2</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>processModel</type>
+                    <uuids>
+                        <uuid>0002dc59-cccd-8000-ba62-014d98014d98</uuid>
+                        <uuid>0002dc5a-2a82-8000-ba62-014d98014d98</uuid>
+                        <uuid>0002dd1e-a82f-8000-f92f-7f0000014e7a</uuid>
+                        <uuid>0002dd31-8ef6-8000-2375-010000010000</uuid>
+                        <uuid>0002dfe6-d7e6-8000-f92f-7f0000014e7a</uuid>
+                        <uuid>0004e173-5f76-8000-8911-014d98014d98</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>portlet</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>page</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>application</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>tempoFeed</type>
+                    <uuids>
+                        <uuid>53fe1cd9-a83d-4e9d-9990-eeda7c94da36</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>recordType</type>
+                    <uuids>
+                        <uuid>b7910269-a1f1-4db7-b773-d4d98c8dcb37</uuid>
+                        <uuid>9e125eec-8f0d-4051-abde-2bf6b5aef04d</uuid>
+                        <uuid>e4471773-673d-4dd1-9cf1-f7bf09fc80fe</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>recordField</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>recordRelationship</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>tempoReport</type>
+                    <uuids>
+                        <uuid>db60e5f9-2a09-4364-9f45-8f3c92ff654e</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>taskReport</type>
+                    <uuids>
+                        <uuid>30b31bfe-aa89-4122-99c8-23408a2af738</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>webApi</type>
+                    <uuids>
+                        <uuid>5140705a-e034-4348-b5e8-a2e617a5a04d</uuid>
+                        <uuid>107c1bd2-9178-4fb4-81de-45c31a88a03f</uuid>
+                        <uuid>f4e798fa-5d49-4efb-afb5-5a4c7691fda9</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>site</type>
+                    <uuids>
+                        <uuid>8588bace-d5bf-4aff-853e-d15b1b157c56</uuid>
+                        <uuid>6e9e3c18-45fa-497d-a54f-e529ff7e50e2</uuid>
+                    </uuids>
+                </item>
+                <item>
+                    <type>adminSetting</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>thirdPartyCredentials</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>dataSource</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>embeddedSailTheme</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>connectedSystem</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>pluginInfo</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>featureFlag</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>designObjectReferenceImplementation</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>aiSkill</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>roboticTaskDesignObject</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>robotPoolDesignObject</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>portal</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationSet</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationString</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationVariable</type>
+                    <uuids/>
+                </item>
+            </globalIdMap>
+        </associatedObjects>
+        <applicationNavigation/>
+        <applicationActions>
+            <action>
+                <displayLabel>Box Layout</displayLabel>
+                <description>Automated test of fields in Box Layout</description>
+                <processModelUuid>0004e173-5f76-8000-8911-014d98014d98</processModelUuid>
+                <actionUuid>4175fa31-2d8e-40f4-b898-d33db9758268</actionUuid>
+            </action>
+            <action>
+                <displayLabel>Test with Accept Button</displayLabel>
+                <description>Test with Accept Button</description>
+                <processModelUuid>0002dfe6-d7e6-8000-f92f-7f0000014e7a</processModelUuid>
+                <actionUuid>db57d6a2-66c2-459b-8447-ec16d2f4715c</actionUuid>
+            </action>
+            <action>
+                <displayLabel>Initialize</displayLabel>
+                <description>Run once to initialize</description>
+                <processModelUuid>0002dd31-8ef6-8000-2375-010000010000</processModelUuid>
+                <actionUuid>919719aa-06a6-44ad-b881-39b4d7b73c09</actionUuid>
+            </action>
+            <action>
+                <displayLabel>All Fields</displayLabel>
+                <description>Automated Test of all types of fields</description>
+                <processModelUuid>0002dc59-cccd-8000-ba62-014d98014d98</processModelUuid>
+                <actionUuid>5c83f311-1d67-4a42-9cf2-b23148979e68</actionUuid>
+            </action>
+            <action>
+                <displayLabel>Automated Testing Input</displayLabel>
+                <description>Automated Testing Input</description>
+                <processModelUuid>0002dc5a-2a82-8000-ba62-014d98014d98</processModelUuid>
+                <actionUuid>419483a0-91c3-41c3-9bf0-4071259822ea</actionUuid>
+            </action>
+        </applicationActions>
+        <associatedApplications>
+            <globalIdMap>
+                <item>
+                    <type>datatype</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>dataStore</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>user</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>groupType</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>group</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>content</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>forum</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>processModelFolder</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>processModel</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>portlet</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>page</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>application</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>tempoFeed</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>recordType</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>recordField</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>recordRelationship</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>tempoReport</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>taskReport</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>webApi</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>site</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>adminSetting</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>thirdPartyCredentials</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>dataSource</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>embeddedSailTheme</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>connectedSystem</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>pluginInfo</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>featureFlag</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>designObjectReferenceImplementation</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>aiSkill</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>roboticTaskDesignObject</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>robotPoolDesignObject</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>portal</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationSet</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationString</type>
+                    <uuids/>
+                </item>
+                <item>
+                    <type>translationVariable</type>
+                    <uuids/>
+                </item>
+            </globalIdMap>
+        </associatedApplications>
+    </application>
+    <roleMap>
+        <contentRoleMap public="true">
+            <role allowForAll="false" inherit="false" name="readers">
+                <users/>
+                <groups>
+                    <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+                </groups>
+            </role>
+            <role allowForAll="false" inherit="false" name="authors">
+                <users/>
+                <groups/>
+            </role>
+            <role allowForAll="false" inherit="false" name="administrators">
+                <users>
+                    <userUuid>Administrator</userUuid>
+                </users>
+                <groups>
+                    <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+                </groups>
+            </role>
+            <role allowForAll="false" inherit="false" name="denyReaders">
+                <users/>
+                <groups/>
+            </role>
+            <role allowForAll="false" inherit="false" name="denyAuthors">
+                <users/>
+                <groups/>
+            </role>
+            <role allowForAll="false" inherit="false" name="denyAdministrators">
+                <users/>
+                <groups/>
+            </role>
+        </contentRoleMap>
+    </roleMap>
+    <defaultApplicationObjects/>
+    <applicationDocumentation/>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47634"/>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_48752"/>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_48764"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491076"/>
+        <historyInfo versionUuid="_a-0000dfd1-7a01-8000-9ba2-011c48011c48_1156936"/>
+        <historyInfo versionUuid="_a-0000e001-56c9-8000-533d-01ef9001ef90_44792"/>
+        <historyInfo versionUuid="_a-0000e003-10e8-8000-acf5-01ef9001ef90_23281"/>
+        <historyInfo versionUuid="_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26198"/>
+        <historyInfo versionUuid="_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25575"/>
+        <historyInfo versionUuid="_a-0000e173-5155-8000-8912-01ef9001ef90_22691"/>
+        <historyInfo versionUuid="_a-0000e18f-d0a2-8000-9082-01ef9001ef90_22752"/>
+        <historyInfo versionUuid="_a-0000e1c7-c8d7-8000-a069-01ef9001ef90_21300"/>
+        <historyInfo versionUuid="_a-0000e312-f844-8000-f43a-01ef9001ef90_25944"/>
+        <historyInfo versionUuid="_a-0000e332-b3b3-8000-af80-01ef9001ef90_26179"/>
+        <historyInfo versionUuid="_a-0000e369-e85b-8000-e426-01ef9001ef90_26077"/>
+        <historyInfo versionUuid="_a-0000e36b-101c-8000-0d58-01ef9001ef90_6891"/>
+        <historyInfo versionUuid="_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31512"/>
+        <historyInfo versionUuid="_a-0000e4a9-dce5-8000-da1d-5eef905eef90_6886"/>
+        <historyInfo versionUuid="_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31404"/>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32620"/>
+        <historyInfo versionUuid="_a-0000e721-c88a-8000-b669-01ef9001ef90_33387"/>
+        <historyInfo versionUuid="_a-0000ea3e-494a-8000-0566-01ef9001ef90_8046"/>
+        <historyInfo versionUuid="_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45812"/>
+        <historyInfo versionUuid="_a-0000eaed-c263-8000-9ba6-011c48011c48_13061"/>
+        <historyInfo versionUuid="_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7843"/>
+        <historyInfo versionUuid="_a-0000eb87-fc9a-8000-9ba4-011c48011c48_24404"/>
+        <historyInfo versionUuid="_a-0000eb87-fc9a-8000-9ba4-011c48011c48_24542"/>
+        <historyInfo versionUuid="_a-0000eb87-fc9a-8000-9ba4-011c48011c48_24785"/>
+        <historyInfo versionUuid="_a-0000eb87-fc9a-8000-9ba4-011c48011c48_25007"/>
+        <historyInfo versionUuid="_a-0000eba5-7372-8000-9ba4-011c48011c48_7959"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751592"/>
+    </history>
+    <postDeploymentProcessData/>
+</applicationHaul>

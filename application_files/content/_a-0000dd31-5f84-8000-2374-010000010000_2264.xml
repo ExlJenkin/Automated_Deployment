@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e573-a325-8000-905e-01ef9001ef90_8712</versionUuid>
+    <interface>
+        <name>AUT_GridsSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2264</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!gridUserPicker,
+  local!gridGroupPicker,
+  local!gridUserGroupPicker,
+  local!gridDocumentPicker,
+  local!gridFolderPicker,
+  local!gridDocumentFolderPicker,
+  local!gridCustomPicker,
+  local!editableSelection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(startIndex:1,batchSize:-1),
+    selected: {}
+  ),
+  local!gridTextField: cast(103, {""}),
+  local!gridParagraphField: cast(103, {}),
+  local!gridEncryptedTextField: cast(223, {}), 
+  local!gridIntegerField: cast(101, {}),
+  local!gridDecimalField: cast(102, {}),
+  local!gridDateField: cast(107, {}),
+  local!gridDatetimeField1,
+  local!gridDatetimeField2,
+  local!gridDropdownField1,
+  local!gridDropdownField2,
+  local!gridRadioField1,
+  local!gridRadioField2,
+  local!gridCheckboxField1,
+  local!gridCheckboxField2,
+  local!gridFileUploadField1,
+  local!gridFileUploadField2,
+  local!gridMultipleFileUploadField1,
+  local!gridMultipleFileUploadField2,
+  local!gridData: {
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"},
+    {id: 6, value: "Value 6", description: "Description 6"},
+    {id: 7, value: "Value 7", description: "Description 7"},
+    {id: 8, value: "Value 8", description: "Description 8"},
+    {id: 1, value: "Value 9", description: "Description 9"},
+    {id: 2, value: "Value 10", description: "Description 10"},
+    {id: 3, value: "Value 11", description: "Description 11"},
+    {id: 4, value: "Value 12", description: "Description 12"},
+    {id: 5, value: "Value 13", description: "Description 13"},
+    {id: 6, value: "Value 14", description: "Description 14"},
+    {id: 7, value: "Value 15", description: "Description 15"},
+    {id: 8, value: "Value 16", description: "Description 16"},
+    {id: 1, value: "Value 17", description: "Description 17"},
+    {id: 2, value: "Value 18", description: "Description 18"},
+    {id: 3, value: "Value 19", description: "Description 19"},
+    {id: 4, value: "Value 20", description: "Description 20"},
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"},
+    {id: 6, value: "Value 6", description: "Description 6"},
+    {id: 7, value: "Value 7", description: "Description 7"},
+    {id: 8, value: "Value 8", description: "Description 8"},
+    {id: 1, value: "Value 9", description: "Description 9"},
+    {id: 2, value: "Value 10", description: "Description 10"},
+    {id: 3, value: "Value 11", description: "Description 11"},
+    {id: 4, value: "Value 12", description: "Description 12"},
+    {id: 5, value: "Value 13", description: "Description 13"},
+    {id: 6, value: "Value 14", description: "Description 14"},
+    {id: 7, value: "Value 15", description: "Description 15"},
+    {id: 8, value: "Value 16", description: "Description 16"},
+    {id: 1, value: "Value 17", description: "Description 17"},
+    {id: 2, value: "Value 18", description: "Description 18"},
+    {id: 3, value: "Value 19", description: "Description 19"},
+    {id: 4, value: "Value 20", description: "Description 20"},
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"},
+    {id: 6, value: "Value 6", description: "Description 6"},
+    {id: 7, value: "Value 7", description: "Description 7"},
+    {id: 8, value: "Value 8", description: "Description 8"},
+    {id: 1, value: "Value 9", description: "Description 9"},
+    {id: 2, value: "Value 10", description: "Description 10"},
+    {id: 3, value: "Value 11", description: "Description 11"},
+    {id: 4, value: "Value 12", description: "Description 12"},
+    {id: 5, value: "Value 13", description: "Description 13"},
+    {id: 6, value: "Value 14", description: "Description 14"},
+    {id: 7, value: "Value 15", description: "Description 15"},
+    {id: 8, value: "Value 16", description: "Description 16"},
+    {id: 1, value: "Value 17", description: "Description 17"},
+    {id: 2, value: "Value 18", description: "Description 18"},
+    {id: 3, value: "Value 19", description: "Description 19"},
+    {id: 4, value: "Value 20", description: "Description 20"},
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"},
+    {id: 6, value: "Value 6", description: "Description 6"},
+    {id: 7, value: "Value 7", description: "Description 7"},
+    {id: 8, value: "Value 8", description: "Description 8"},
+    {id: 1, value: "Value 9", description: "Description 9"},
+    {id: 2, value: "Value 10", description: "Description 10"},
+    {id: 3, value: "Value 11", description: "Description 11"},
+    {id: 4, value: "Value 12", description: "Description 12"},
+    {id: 5, value: "Value 13", description: "Description 13"},
+    {id: 6, value: "Value 14", description: "Description 14"},
+    {id: 7, value: "Value 15", description: "Description 15"},
+    {id: 8, value: "Value 16", description: "Description 16"},
+    {id: 1, value: "Value 17", description: "Description 17"},
+    {id: 2, value: "Value 18", description: "Description 18"},
+    {id: 3, value: "Value 19", description: "Description 19"},
+    {id: 4, value: "Value 20", description: "Description 20"},
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"},
+    {id: 6, value: "Value 6", description: "Description 6"},
+    {id: 7, value: "Value 7", description: "Description 7"},
+    {id: 8, value: "Value 8", description: "Description 8"},
+    {id: 1, value: "Value 9", description: "Description 9"},
+    {id: 2, value: "Value 10", description: "Description 10"},
+    {id: 3, value: "Value 11", description: "Description 11"},
+    {id: 4, value: "Value 12", description: "Description 12"},
+    {id: 5, value: "Value 13", description: "Description 13"},
+    {id: 6, value: "Value 14", description: "Description 14"},
+    {id: 7, value: "Value 15", description: "Description 15"},
+    {id: 8, value: "Value 16", description: "Description 16"},
+    {id: 1, value: "Value 17", description: "Description 17"},
+    {id: 2, value: "Value 18", description: "Description 18"},
+    {id: 3, value: "Value 19", description: "Description 19"},
+    {id: 4, value: "Value 20", description: "Description 12"}
+  },
+  local!gridSelection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(startIndex: 1, batchSize: 5)
+  ),
+  local!rowHighlightData: {
+    {id: 1, value: "Value 1", description: "Description 1"},
+    {id: 2, value: "Value 2", description: "Description 2"},
+    {id: 3, value: "Value 3", description: "Description 3"},
+    {id: 4, value: "Value 4", description: "Description 4"},
+    {id: 5, value: "Value 5", description: "Description 5"}
+  },
+  local!rowHighlightSelection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(startIndex: 1, batchSize: 5)
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Grids",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_gridLayout"(
+        label: "EditableGrid",
+        headerCells: {
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "TextField"),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "ParagraphField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "EncryptedTextField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "IntegerField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "DecimalField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "DateField"
+          )
+        },
+        columnConfigs: {},
+        rows: {
+          #"SYSTEM_SYSRULES_applyComponents"(
+            #"_a-0000dc64-cf59-8000-9ba2-011c48011c48_77004"(
+              index: _
+            ),
+            enumerate(count(local!gridTextField)) + 1
+          )
+        },
+        selectable: true,
+        selectionValue: local!editableSelection.selected,
+        selectionSaveInto: local!editableSelection.selected,
+        addrowlink: #"SYSTEM_SYSRULES_dynamicLink"(
+          label: "Add Data to Paging Grid",
+          value: "",
+          saveInto: {
+            a!save(
+              target: local!gridTextField,
+              value: append(local!gridTextField, cast(3, null))
+            )
+          }
+        ),
+        validations: {}
+      ),
+      
+      #"SYSTEM_SYSRULES_gridLayout"(
+        label: "ReadOnlyGrid",
+        headerCells: {
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "TextField"),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "ParagraphField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "EncryptedTextField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "IntegerField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "DecimalField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "DateField"
+          )
+        },
+        columnConfigs: {},
+        rows: {
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridTextField, 1, null),
+                saveInto: local!gridTextField,
+                refreshAfter: "UNFOCUS",
+                validations: {},
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridParagraphField, 1, null),
+                saveInto: local!gridParagraphField,
+                refreshAfter: "UNFOCUS",
+                height: "MEDIUM",
+                validations: {},
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_encryptedTextField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridEncryptedTextField, 1, null),
+                saveInto: local!gridEncryptedTextField,
+                refreshAfter: "UNFOCUS",
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_integerField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridIntegerField, 1, null),
+                saveInto: local!gridIntegerField,
+                refreshAfter: "UNFOCUS",
+                validations: {},
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_floatingPointField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridDecimalField, 1, null),
+                saveInto: local!gridDecimalField,
+                refreshAfter: "UNFOCUS",
+                validations: {},
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_dateField"(
+                label: "Label",
+                labelPosition: "ABOVE",
+                value: index(local!gridDateField, 1, null),
+                saveInto: local!gridDateField,
+                validations: {},
+                readOnly: true
+              )
+            }
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_gridLayout"(
+        label: "EditableGrid",
+        headerCells: {
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+          label: "DatetimeField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "DropdownField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "RadioField"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "CheckboxField"
+          )
+        },
+        columnConfigs: {},
+        rows: {
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_dateTimeField"(
+                label: "DatetimeField",
+                labelPosition: "ABOVE",
+                value: local!gridDatetimeField1,
+                saveInto: local!gridDatetimeField1,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_dropdownField"(
+                label: "DropdownField",
+                labelPosition: "ABOVE",
+                placeholderLabel: "--- Select a Value ---",
+                choiceLabels: {"Option 1", "Option 2"},
+                choiceValues: {1, 2},
+                value: local!gridDropdownField1,
+                saveInto: local!gridDropdownField1,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_radioButtonField"(
+                label: "RadioField",
+                labelPosition: "ABOVE",
+                choiceLabels: {"Option 1", "Option 2"},
+                choiceValues: {1, 2},
+                value: local!gridRadioField1,
+                saveInto: local!gridRadioField1,
+                choiceLayout: "STACKED",
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_checkboxField"(
+                label: "CheckboxField",
+                labelPosition: "ABOVE",
+                choiceLabels: {"Option 1", "Option 2"},
+                choiceValues: {1, 2},
+                value: local!gridCheckboxField1,
+                saveInto: local!gridCheckboxField1,
+                validations: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_dateTimeField"(
+                label: "DatetimeField",
+                labelPosition: "ABOVE",
+                value: local!gridDatetimeField2,
+                saveInto: local!gridDatetimeField2,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_dropdownField"(
+                label: "DropdownField",
+                labelPosition: "ABOVE",
+                placeholderLabel: "--- Select a Value ---",
+                choiceLabels: {"Option 1", "Option 2"},
+                choiceValues: {1, 2},
+                value: local!gridDropdownField2,
+                saveInto: local!gridDropdownField2,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_radioButtonField"(
+                label: "RadioField",
+                labelPosition: "ABOVE",
+                choiceLabels: {"Option 1", "Option 2"},
+                choiceValues: {1, 2},
+                value: local!gridRadioField2,
+                saveInto: local!gridRadioField2,
+                choiceLayout: "STACKED",
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_checkboxField"(
+                label: "CheckboxField",
+                labelPosition: "ABOVE",
+                choiceLabels: {""},
+                choiceValues: {1},
+                value: local!gridCheckboxField2,
+                saveInto: local!gridCheckboxField2,
+                validations: {}
+              )
+            }
+          )
+        }
+      ),
+      if(
+        #"_a-0000dd31-5f84-8000-2374-010000010000_2281" &gt; 7.10,
+        #"SYSTEM_SYSRULES_gridLayout"(
+          label: "EditableGrid",
+          headerCells: {
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "FileUploadField"
+            ),
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "MultipleFileUploadField"
+            )
+          },
+          columnConfigs: {},
+          rows: {
+            #"SYSTEM_SYSRULES_gridRowLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_fileUploadField"(
+                  label: "FileUploadField",
+                  labelPosition: "ABOVE",
+                  target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+                  value: local!gridFileUploadField1,
+                  saveInto: local!gridFileUploadField1,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_fileUploadField_v1"(
+                  label: "MultipleFileUploadField",
+                  labelPosition: "ABOVE",
+                  target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+                  value: local!gridMultipleFileUploadField2,
+                  saveInto: local!gridMultipleFileUploadField2,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_gridRowLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_fileUploadField"(
+                  label: "FileUploadField",
+                  labelPosition: "ABOVE",
+                  target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+                  value: local!gridFileUploadField2,
+                  saveInto: local!gridFileUploadField2,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_fileUploadField_v1"(
+                  label: "MultipleFileUploadField",
+                  labelPosition: "ABOVE",
+                  target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+                  value: local!gridMultipleFileUploadField1,
+                  saveInto: local!gridMultipleFileUploadField1,
+                  validations: {}
+                )
+              }
+            )
+          },
+          selectionSaveInto: {},
+          validations: {}
+        ),
+        #"SYSTEM_SYSRULES_gridLayout"(
+          label: "EditableGrid",
+          headerCells: {
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(label: "FileUploadField")
+          },
+          rows: {
+            #"SYSTEM_SYSRULES_gridRowLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "FileUploadField",
+                  labelPosition: "ABOVE",
+                  value: "Not available in 7.10",
+                  readOnly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      ),
+      #"SYSTEM_SYSRULES_gridLayout"(
+        label: "EditableGrid",
+        headerCells: {
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "PickerField1"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "PickerField2"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "PickerField3"
+          ),
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "PickerField4"
+          )
+        },
+        columnConfigs: {},
+        rows: {
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_pickerFieldUsers"(
+                label: "UserPicker",
+                labelPosition: "ABOVE",
+                value: local!gridUserPicker,
+                saveInto: local!gridUserPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_pickerFieldGroups"(
+                label: "GroupPicker",
+                labelPosition: "ABOVE",
+                value: local!gridGroupPicker,
+                saveInto: local!gridGroupPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_pickerFieldUsersAndGroups"(
+                label: "UserGroupPicker",
+                labelPosition: "ABOVE",
+                value: local!gridUserGroupPicker,
+                saveInto: local!gridUserGroupPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_pickerFieldDocuments"(
+                label: "DocumentPicker",
+                labelPosition: "ABOVE",
+                value: local!gridDocumentPicker,
+                saveInto: local!gridDocumentPicker,
+                validations: {}
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_pickerFieldFolders"(
+                label: "FolderPicker",
+                labelPosition: "ABOVE",
+                value: local!gridFolderPicker,
+                saveInto: local!gridFolderPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_pickerFieldDocumentsAndFolders"(
+                label: "DocumentFolderPicker",
+                labelPosition: "ABOVE",
+                value: local!gridDocumentFolderPicker,
+                saveInto: local!gridDocumentFolderPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_pickerFieldCustom"(
+                label: "CustomPicker",
+                labelPosition: "ABOVE",
+                suggestFunction: #"_a-0000e1c6-5be9-8000-2440-01ef9001ef90_3498",
+                selectedLabels: local!gridCustomPicker,
+                value: local!gridCustomPicker,
+                saveInto: local!gridCustomPicker,
+                validations: {}
+              ),
+              #"SYSTEM_SYSRULES_textField"(readOnly: true)
+            }
+          )
+        },
+        selectionSaveInto: {},
+        validations: {}
+      ),
+      with(
+        local!pagedGridData: todatasubset(
+          local!gridData,
+          local!gridSelection.pagingInfo
+        ),
+        #"SYSTEM_SYSRULES_gridField"(
+          label: "PagingGrid",
+          labelPosition: "ABOVE",
+          totalCount: length(local!gridData),
+          columns: {
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label: "Column Label 1",
+              data: local!pagedGridData.data.value,
+              field: "value"
+            ),
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label: "Column Label 2",
+              data: local!pagedGridData.data.description,
+              field: "description"
+            )
+          },
+          identifiers: local!pagedGridData.data.id,
+          value: local!gridSelection,
+          saveInto: local!gridSelection,
+          selection: true,
+          validations: {}
+        )
+      ),
+      #"45a60d5e-1f2d-4495-a0ca-b425ea926a1e"(),
+      #"_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26140"(
+        gridSelection: local!rowHighlightSelection,
+        gridData: local!rowHighlightData
+      ),
+      #"SYSTEM_SYSRULES_gridLayout"(
+        label: "Grid with a button",
+        headerCells: {
+          #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+            label: "Column One"
+          )
+        },
+        columnConfigs: {},
+        rows: {
+          #"SYSTEM_SYSRULES_gridRowLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_ButtonArrayLayout"(
+                buttons: {
+                  #"SYSTEM_SYSRULES_ButtonWidget"(
+                    label: "Btn inside grid",
+                    icon: "pencil",
+                    saveInto: { },
+                    size: "STANDARD",
+                    style: "LINK"
+                  )
+                },
+                align: "CENTER",
+                marginBelow: "NONE"
+              )
+            }
+          )
+        },
+        selectionSaveInto: {},
+        validations: {}
+      )
+    },
+    secondColumnContents: {}
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47598"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491103"/>
+        <historyInfo versionUuid="_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26165"/>
+        <historyInfo versionUuid="_a-0000e1c7-c8d7-8000-a069-01ef9001ef90_21304"/>
+        <historyInfo versionUuid="_a-0000e573-1e0e-8000-fad5-01ef9001ef90_31424"/>
+        <historyInfo versionUuid="_a-0000e573-a325-8000-905e-01ef9001ef90_7887"/>
+        <historyInfo versionUuid="_a-0000e573-a325-8000-905e-01ef9001ef90_8712"/>
+    </history>
+</contentHaul>

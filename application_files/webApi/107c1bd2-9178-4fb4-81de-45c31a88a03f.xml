@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>856a59b9-1f4f-440d-a980-9f75b9fee846</versionUuid>
+    <webApi a:uuid="107c1bd2-9178-4fb4-81de-45c31a88a03f" name="AUT_TestWebApi">
+        <a:description></a:description>
+        <a:expression>#"SYSTEM_SYSRULES_httpResponse"(
+  body: "test-web-api"
+)</a:expression>
+        <a:urlAlias>test-web-api</a:urlAlias>
+        <a:httpMethod>GET</a:httpMethod>
+        <a:system>false</a:system>
+        <a:requestBodyType>NONE</a:requestBodyType>
+        <a:loggingEnabled>false</a:loggingEnabled>
+    </webApi>
+    <roleMap>
+        <role name="web_api_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:body/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="6a66481f-02d7-4908-9490-4f6b456b3f98"/>
+        <historyInfo versionUuid="5f60bd7d-4f22-42c6-b3fc-eaeae0b8866b"/>
+        <historyInfo versionUuid="856a59b9-1f4f-440d-a980-9f75b9fee846"/>
+    </history>
+</webApiHaul>

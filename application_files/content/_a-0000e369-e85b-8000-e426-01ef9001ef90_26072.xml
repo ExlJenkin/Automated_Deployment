@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e369-e85b-8000-e426-01ef9001ef90_26159</versionUuid>
+    <interface>
+        <name>AUT_ContainerSection</name>
+        <uuid>_a-0000e369-e85b-8000-e426-01ef9001ef90_26072</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "Container Section"
+  ),
+  #"SYSTEM_SYSRULES_cardLayout"(
+    accessibilityText: "Card Container",
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_integerField"(
+                label: "Integer",
+                value: 1,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_floatingPointField"(
+                label: "Decimal Field",
+                value: 1.2,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Text",
+                value: "text A",
+                readOnly: true
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "Paragraph",
+                value: "paragraph A",
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_dateField"(
+                label: "Date",
+                value: "08/19/2019",
+                readOnly: true
+              )
+            }
+          )
+        }
+      )
+    },
+    marginBelow: "STANDARD"
+  ),
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "Section Container",
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_integerField"(
+                label: "Integer",
+                value: 2,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_floatingPointField"(
+                label: "Decimal Field",
+                value: 2.2,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Text",
+                value: "text B",
+                readOnly: true
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "Paragraph",
+                value: "paragraph B",
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_dateField"(
+                label: "Date",
+                value: "08/20/2019",
+                readOnly: true
+              )
+            }
+          )
+        }
+      )
+
+    }
+  ),
+  #"SYSTEM_SYSRULES_boxLayout"(
+    label: "Box Container",
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_integerField"(
+                label: "Integer",
+                value: 3,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_floatingPointField"(
+                label: "Decimal Field",
+                value: 3.2,
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Text",
+                value: "text C",
+                readOnly: true
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "Paragraph",
+                value: "paragraph C",
+                readOnly: true
+              ),
+              #"SYSTEM_SYSRULES_dateField"(
+                label: "Date",
+                value: "08/21/019",
+                readOnly: true
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+}</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e369-e85b-8000-e426-01ef9001ef90_26159"/>
+    </history>
+</contentHaul>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ea3f-81be-8000-5587-01ef9001ef90_32588</versionUuid>
+    <interface>
+        <name>AUT_PickersSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2258</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!userPicker,
+  local!groupPicker,
+  local!userGroupPicker,
+  local!recordPicker,
+  local!documentPicker,
+  local!folderPicker,
+  local!documentFolderPicker,
+  local!customPicker,
+  local!partialPicker,
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Pickers",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_pickerFieldUsers"(
+        label: "UserPicker",
+        labelPosition: "ABOVE",
+        value: local!userPicker,
+        saveInto: local!userPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldGroups"(
+        label: "GroupPicker",
+        labelPosition: "ABOVE",
+        value: local!groupPicker,
+        saveInto: local!groupPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldUsersAndGroups"(
+        label: "UserGroupPicker",
+        labelPosition: "ABOVE",
+        value: local!userGroupPicker,
+        saveInto: local!userGroupPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldRecords_v1"(
+        label: "Record Picker",
+        labelPosition: "ABOVE",
+        recordType: #"urn:appian:record-type:v1:b7910269-a1f1-4db7-b773-d4d98c8dcb37",
+        saveInto: local!recordPicker,
+        value: local!recordPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldDocuments"(
+        label: "DocumentPicker",
+        labelPosition: "ABOVE",
+        value: local!documentPicker,
+        saveInto: local!documentPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldFolders"(
+        label: "FolderPicker",
+        labelPosition: "ABOVE",
+        value: local!folderPicker,
+        saveInto: local!folderPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldDocumentsAndFolders"(
+        label: "DocumentFolderPicker",
+        labelPosition: "ABOVE",
+        value: local!documentFolderPicker,
+        saveInto: local!documentFolderPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldCustom"(
+        label: "CustomPicker",
+        labelPosition: "ABOVE",
+        suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+        selectedLabels: local!customPicker,
+        value: local!customPicker,
+        saveInto: local!customPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldCustom"(
+        label: "PartialPicker",
+        labelPosition: "ABOVE",
+        suggestFunction: #"_a-0000e1c6-5be9-8000-2440-01ef9001ef90_3498",
+        selectedLabels: local!partialPicker,
+        value: local!partialPicker,
+        saveInto: local!partialPicker,
+        validations: {}
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_pickerFieldUsers"(
+        label: "ROUserPicker",
+        labelPosition: "ABOVE",
+        readOnly: true,
+        value: local!userPicker,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldGroups"(
+        label: "ROGroupPicker",
+        labelPosition: "ABOVE",
+        value: local!groupPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldUsersAndGroups"(
+        label: "ROUserGroupPicker",
+        labelPosition: "ABOVE",
+        value: local!userGroupPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldDocuments"(
+        label: "RODocumentPicker",
+        labelPosition: "ABOVE",
+        value: local!documentPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldFolders"(
+        label: "ROFolderPicker",
+        labelPosition: "ABOVE",
+        value: local!folderPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldDocumentsAndFolders"(
+        label: "RODocumentFolderPicker",
+        labelPosition: "ABOVE",
+        value: local!documentFolderPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldCustom"(
+        label: "ROCustomPicker",
+        labelPosition: "ABOVE",
+        suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+        selectedLabels: local!customPicker,
+        value: local!customPicker,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldCustom"(
+        label: "ROPartialPicker",
+        labelPosition: "ABOVE",
+        suggestFunction: #"_a-0000e1c6-5be9-8000-2440-01ef9001ef90_3498",
+        selectedLabels: local!partialPicker,
+        value: local!partialPicker,
+        readOnly: true,
+        validations: {}
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47550"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491098"/>
+        <historyInfo versionUuid="_a-0000e1f5-b618-8000-4e98-01ef9001ef90_21296"/>
+        <historyInfo versionUuid="_a-0000ea3f-81be-8000-5587-01ef9001ef90_32588"/>
+    </history>
+</contentHaul>

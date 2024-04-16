@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e632-39e5-8000-1692-01ef9001ef90_32650</versionUuid>
+    <interface>
+        <name>AUT_Sections</name>
+        <uuid>_a-0000e632-39e5-8000-1692-01ef9001ef90_32615</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!smallSecName: "section with extra small label and icon",
+  local!largeSecName: "section with large label and icon",
+  local!h4SecName: "section with labelHeadingTag h4",
+  {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: local!smallSecName,
+      labelSize: "EXTRA_SMALL",
+      labelIcon: "cart-plus",
+      isCollapsible: fn!true(),
+      contents: #"SYSTEM_SYSRULES_textField"(label: fn!concat("a field in ", local!smallSecName), readOnly: fn!true())
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: local!largeSecName,
+      labelSize: "LARGE",
+      labelIcon: "cart-plus",
+      isCollapsible: fn!true(),
+      contents: #"SYSTEM_SYSRULES_textField"(label: fn!concat("a field in ", local!largeSecName), readOnly: fn!true())
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: local!h4SecName,
+      labelHeadingTag: "H4",
+      isCollapsible: fn!true(),
+      contents: #"SYSTEM_SYSRULES_textField"(label: fn!concat("a field in ", local!h4SecName), readOnly: fn!true())
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32650"/>
+    </history>
+</contentHaul>

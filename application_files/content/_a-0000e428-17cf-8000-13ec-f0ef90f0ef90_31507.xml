@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eafd-f6ef-8000-9ba4-011c48011c48_7728</versionUuid>
+    <interface>
+        <name>AUT_ChartsSection</name>
+        <uuid>_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31507</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!barChartClickValue: 0,
+  local!columnChartClickValue: 0,
+  local!pieChartClickValue: 0,
+  local!lineChartClickValue: 0,
+  {
+    #"SYSTEM_SYSRULES_textField"(
+      label: "bar chart bar clicked",
+      value: local!barChartClickValue,
+      readOnly: fn!true()
+    ),
+    #"SYSTEM_SYSRULES_barChartField_v1"(
+      label: "Bar Chart",
+      labelPosition: "ABOVE",
+      categories: {"Category 1", "Category 2", "Category 3"},
+      series: {
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series", 
+          data: {1, 2, 3},
+          links: {
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 1,
+              saveInto: local!barChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 2,
+              saveInto: local!barChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 3,
+              saveInto: local!barChartClickValue
+            )
+          }
+        )
+      },
+      stacking: "NONE",
+      showLegend: true,
+      showTooltips: true,
+      allowImageDownload: true
+    ),
+    #"SYSTEM_SYSRULES_barChartField"(
+      label: "Bar Chart",
+      categories: {"Category 1", "Category 2", "Category 3"},
+      series: {
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series", 
+          data: {1, 2, 3},
+          links: {
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 4,
+              saveInto: local!barChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 5,
+              saveInto: local!barChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!barChartClickValue + 6,
+              saveInto: local!barChartClickValue
+            )
+          }
+        )
+      },
+      stacking: "NONE",
+      showLegend: true,
+      showTooltips: true,
+      labelPosition: "ABOVE"
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "column chart column clicked",
+      value: local!columnChartClickValue,
+      readOnly: fn!true()
+    ),
+    #"SYSTEM_SYSRULES_columnChartField"(
+      label: "Column Chart",
+      categories: {"Category 1", "Category 2", "Category 3"},
+      series: {
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series", 
+          data: {1, 2, 3},
+          links: {
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!columnChartClickValue + 1,
+              saveInto: local!columnChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!columnChartClickValue + 2,
+              saveInto: local!columnChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!columnChartClickValue + 3,
+              saveInto: local!columnChartClickValue
+            )
+          }
+        )
+      },
+      stacking: "NONE",
+      showLegend: true,
+      showTooltips: true,
+      labelPosition: "ABOVE",
+      allowImageDownload: true
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "pie chart slice clicked",
+      value: local!pieChartClickValue,
+      readOnly: fn!true()
+    ),
+    #"SYSTEM_SYSRULES_pieChartField"(
+      label: "Pie Chart",
+      labelPosition: "ABOVE",
+      series: {
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series 1", 
+          data: 1, 
+          links: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: local!pieChartClickValue + 1,
+            saveInto: local!pieChartClickValue
+          )
+        ),
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series 2", 
+          data: 2,
+          links: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: local!pieChartClickValue + 2,
+            saveInto: local!pieChartClickValue
+          )
+        ),
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series 3", 
+          data: 3,
+          links: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: local!pieChartClickValue + 3,
+            saveInto: local!pieChartClickValue
+          )
+        )
+      },
+      showDataLabels: true
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "line chart point clicked",
+      value: local!lineChartClickValue,
+      readOnly: fn!true()
+    ),
+    #"SYSTEM_SYSRULES_lineChartField_v1"(
+      label: "Line Chart",
+      labelPosition: "ABOVE",
+      categories: {"Category 1", "Category 2", "Category 3"},
+      series: {
+        #"SYSTEM_SYSRULES_chartSeries"(
+          label: "Chart Series", 
+          data: {1, 2, 3},
+          links: {
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!lineChartClickValue + 1,
+              saveInto: local!lineChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!lineChartClickValue + 2,
+              saveInto: local!lineChartClickValue
+            ),
+            #"SYSTEM_SYSRULES_dynamicLink"(
+              value: local!lineChartClickValue + 3,
+              saveInto: local!lineChartClickValue
+            )
+          },
+          color: "RED"
+        )
+      },
+      showLegend: true,
+      showTooltips: true
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31518"/>
+        <historyInfo versionUuid="_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31785"/>
+        <historyInfo versionUuid="_a-0000eafd-f6ef-8000-9ba4-011c48011c48_7728"/>
+    </history>
+</contentHaul>

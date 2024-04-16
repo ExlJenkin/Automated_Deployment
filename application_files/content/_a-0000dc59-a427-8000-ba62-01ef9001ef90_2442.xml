@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491086</versionUuid>
+    <interface>
+        <name>AUT_TestReport</name>
+        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2442</uuid>
+        <description>Simple Report to test report is working </description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!departments: {"HR", "Marketing", "Sales", "IT"},
+  #"SYSTEM_SYSRULES_dashboardLayout"(
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_sectionLayout"(
+        firstColumnContents: {
+          #"SYSTEM_SYSRULES_columnChartField"(
+            label: "Spending vs. Budget",
+            labelPosition: "ABOVE",
+            categories: local!departments,
+            series: {
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Budget", data: {7000, 12000, 10000, 10000}),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Spent", data: {3500, 9000, 10500, 8000})
+            },
+            xAxisTitle: "Department",
+            yAxisTitle: "Amount ($)",
+            stacking: "NONE",
+            showLegend: true,
+            showTooltips: true
+          ),
+          #"SYSTEM_SYSRULES_pieChartField"(
+            label: "Spending by Department",
+            labelPosition: "ABOVE",
+            series: {
+              #"SYSTEM_SYSRULES_chartSeries"(label: "HR", data: 3500),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Marketing", data: 9000),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Sales", data: 10500),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "IT", data: 8000)
+            },
+            showDataLabels: true,
+            showAsPercentage: true
+          ),
+
+        },
+        secondColumnContents: {
+          #"SYSTEM_SYSRULES_columnChartField"(
+            label: "Remaining",
+            labelPosition: "ABOVE",
+            categories: local!departments,
+            series: {
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Remaining", data: {3500, 3000, -500, 2000})
+            },
+            xAxisTitle: "Department",
+            yAxisTitle: "Amount ($)",
+            stacking: "NONE",
+            showLegend: false,
+            showTooltips: true
+          ),
+          #"SYSTEM_SYSRULES_columnChartField"(
+            label: "Spending by Category",
+            labelPosition: "ABOVE",
+            categories: local!departments,
+            series: {
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Hardware", data: {0, 2000, 2000, 6000}),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Software", data: {0, 1000, 500, 1500}),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Travel", data: {0, 3000, 4000, 0}),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Recruiting", data: {1000, 0, 0, 0}),
+              #"SYSTEM_SYSRULES_chartSeries"(label: "Miscellaneous", data: {1500, 3000, 1500, 500})
+            },
+            xAxisTitle: "Department",
+            yAxisTitle: "Total Purchase Requests",
+            stacking: "NORMAL",
+            showLegend: true,
+            showTooltips: true
+          )
+        }
+      )
+    },
+    secondColumnContents: {}
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47490"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491086"/>
+    </history>
+</contentHaul>

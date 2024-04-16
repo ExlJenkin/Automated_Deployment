@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751577</versionUuid>
+    <dataStore>
+        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2437</uuid>
+        <name>AUT DS</name>
+        <description>Data Store for the automated testing application</description>
+        <dataSourceKey>jdbc/Appian</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <autoUpdateSchema>true</autoUpdateSchema>
+        <entities>
+            <entity>
+                <uuid>74a2f58d-a860-4446-9e88-73d6d983f9d0</uuid>
+                <name>testData</name>
+                <type>{urn:com:appian:types}AUT_TestData</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47745"/>
+        <historyInfo versionUuid="_a-0000dfd1-7a01-8000-9ba2-011c48011c48_1156942"/>
+        <historyInfo versionUuid="_a-0000e000-ce26-8000-acf5-01ef9001ef90_23220"/>
+        <historyInfo versionUuid="_a-0000e001-56c9-8000-533d-01ef9001ef90_44772"/>
+        <historyInfo versionUuid="_a-0000e09a-3aba-8000-0e24-01ef9001ef90_46192"/>
+        <historyInfo versionUuid="_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25447"/>
+        <historyInfo versionUuid="_a-0000e17c-7bf2-8000-da63-01ef9001ef90_26136"/>
+        <historyInfo versionUuid="_a-0000e17c-7bf2-8000-da63-01ef9001ef90_26645"/>
+        <historyInfo versionUuid="_a-0000e17c-7bf2-8000-da63-01ef9001ef90_26938"/>
+        <historyInfo versionUuid="_a-0000e18f-d0a2-8000-9082-01ef9001ef90_22750"/>
+        <historyInfo versionUuid="_a-0000e1c7-c8d7-8000-a069-01ef9001ef90_21310"/>
+        <historyInfo versionUuid="_a-0000e1f5-b618-8000-4e98-01ef9001ef90_21291"/>
+        <historyInfo versionUuid="_a-0000e204-24d2-8000-9740-01ef9001ef90_23776"/>
+        <historyInfo versionUuid="_a-0000e20d-1e6e-8000-8bb3-01ef9001ef90_22296"/>
+        <historyInfo versionUuid="_a-0000e2f5-ad2a-8000-a91f-01ef9001ef90_25919"/>
+        <historyInfo versionUuid="_a-0000e312-f844-8000-f43a-01ef9001ef90_25919"/>
+        <historyInfo versionUuid="_a-0000e332-b3b3-8000-af80-01ef9001ef90_25940"/>
+        <historyInfo versionUuid="_a-0000e369-e85b-8000-e426-01ef9001ef90_25997"/>
+        <historyInfo versionUuid="_a-0000e39a-789a-8000-7555-31ef9031ef90_8358"/>
+        <historyInfo versionUuid="_a-0000e3b8-23e4-8000-204e-aaef90aaef90_31115"/>
+        <historyInfo versionUuid="_a-0000e3cf-df02-8000-db60-cbef90cbef90_31109"/>
+        <historyInfo versionUuid="_a-0000e419-b2f3-8000-af74-dfef90dfef90_31257"/>
+        <historyInfo versionUuid="_a-0000e423-4162-8000-3e0e-acef90acef90_8350"/>
+        <historyInfo versionUuid="_a-0000e425-f378-8000-f08b-6def906def90_8350"/>
+        <historyInfo versionUuid="_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31530"/>
+        <historyInfo versionUuid="_a-0000e4a9-dce5-8000-da1d-5eef905eef90_6884"/>
+        <historyInfo versionUuid="_a-0000e502-6a90-8000-6684-2bef902bef90_8463"/>
+        <historyInfo versionUuid="_a-0000e504-5167-8000-4c94-a8ef90a8ef90_32315"/>
+        <historyInfo versionUuid="_a-0000e570-d277-8000-d7fa-01ef9001ef90_7310"/>
+        <historyInfo versionUuid="_a-0000e573-1e0e-8000-fad5-01ef9001ef90_31417"/>
+        <historyInfo versionUuid="_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31397"/>
+        <historyInfo versionUuid="_a-0000e578-afb4-8000-a47b-01ef9001ef90_7315"/>
+        <historyInfo versionUuid="_a-0000e5d7-f1da-8000-d79d-01ef9001ef90_11091"/>
+        <historyInfo versionUuid="_a-0000e60f-f2c5-8000-cc8b-01ef9001ef90_31607"/>
+        <historyInfo versionUuid="_a-0000e632-3a10-8000-13a9-01ef9001ef90_32176"/>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32455"/>
+        <historyInfo versionUuid="_a-0000e633-f4a9-8000-dbf2-01ef9001ef90_7345"/>
+        <historyInfo versionUuid="_a-0000e6b4-be45-8000-9847-01ef9001ef90_33080"/>
+        <historyInfo versionUuid="_a-0000e71b-3148-8000-1ef4-01ef9001ef90_58092"/>
+        <historyInfo versionUuid="_a-0000e721-c88a-8000-b669-01ef9001ef90_33405"/>
+        <historyInfo versionUuid="_a-0000e835-c2fb-8000-9409-01ef9001ef90_32526"/>
+        <historyInfo versionUuid="_a-0000e835-c2fb-8000-9409-01ef9001ef90_32564"/>
+        <historyInfo versionUuid="_a-0000ea3f-81be-8000-5587-01ef9001ef90_32581"/>
+        <historyInfo versionUuid="_a-0000eace-5585-8000-0b64-01ef9001ef90_33910"/>
+        <historyInfo versionUuid="_a-0000eace-9ff1-8000-9ba4-011c48011c48_7779"/>
+        <historyInfo versionUuid="_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45857"/>
+        <historyInfo versionUuid="_a-0000ea6e-16d6-8000-cc06-01ef9001ef90_35699"/>
+        <historyInfo versionUuid="_a-0000eabf-e290-8000-8994-01ef9001ef90_7635"/>
+        <historyInfo versionUuid="_a-0000ead9-d9cf-8000-9bb4-011c48011c48_10554"/>
+        <historyInfo versionUuid="_a-0000eaeb-197c-8000-9ba4-011c48011c48_11339"/>
+        <historyInfo versionUuid="_a-0000eaed-c263-8000-9ba6-011c48011c48_13100"/>
+        <historyInfo versionUuid="_a-0000eafd-f6ef-8000-9ba4-011c48011c48_7714"/>
+        <historyInfo versionUuid="_a-0000eb10-6866-8000-9ba4-011c48011c48_7713"/>
+        <historyInfo versionUuid="_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7921"/>
+        <historyInfo versionUuid="_a-0000eb88-04ce-8000-9ba6-011c48011c48_12729"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751577"/>
+    </history>
+</dataStoreHaul>

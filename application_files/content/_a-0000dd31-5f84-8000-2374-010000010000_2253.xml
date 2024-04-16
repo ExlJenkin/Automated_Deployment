@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eaeb-197c-8000-9ba4-011c48011c48_11346</versionUuid>
+    <interface>
+        <name>AUT_BasicFieldsSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2253</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!textField,
+  local!paragraphField,
+  local!encryptedTextField,
+  local!integerField,
+  local!decimalField,
+  local!barcodeField,
+  local!maksedBarcodeField,
+  local!dateField,
+  local!datetimeField,
+  local!DropdownField,
+  local!multipleDropdownField,
+  local!dropdownFieldWithSearch,
+  local!multipleDropdownFieldWithSearch,
+  local!radioField,
+  local!radioFieldCardsStyle,
+  local!checkboxField,
+  local!checkboxFieldCardsStyle,
+  local!fileUploadField,
+  local!multipleFileUploadField,
+  local!buttonWithTooltipToggle: fn!false(),
+  local!buttonWithLoadingIndicator: fn!false(),
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Basic Fields",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "TextField",
+        labelPosition: "ABOVE",
+        value: local!textField,
+        saveInto: local!textField,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "ROTextField",
+        labelPosition: "ABOVE",
+        value: local!textField,
+        saveInto: local!textField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label: "ParagraphField",
+        labelPosition: "ABOVE",
+        value: local!paragraphField,
+        saveInto: local!paragraphField,
+        refreshAfter: "UNFOCUS",
+        height: "MEDIUM",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label: "ROParagraphField",
+        labelPosition: "ABOVE",
+        value: local!paragraphField,
+        saveInto: local!paragraphField,
+        refreshAfter: "UNFOCUS",
+        height: "MEDIUM",
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_encryptedTextField"(
+        label: "EncryptedTextField",
+        labelPosition: "ABOVE",
+        value: local!encryptedTextField,
+        saveInto: local!encryptedTextField,
+        refreshAfter: "UNFOCUS"
+      ),
+      #"SYSTEM_SYSRULES_encryptedTextField"(
+        label: "ROEncryptedTextField",
+        labelPosition: "ABOVE",
+        value: local!encryptedTextField,
+        saveInto: local!encryptedTextField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_integerField"(
+        label: "IntegerField",
+        labelPosition: "ABOVE",
+        value: local!integerField,
+        saveInto: local!integerField,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_integerField"(
+        label: "ROIntegerField",
+        labelPosition: "ABOVE",
+        value: local!integerField,
+        saveInto: local!integerField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_floatingPointField"(
+        label: "DecimalField",
+        labelPosition: "ABOVE",
+        value: local!decimalField,
+        saveInto: local!decimalField,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_floatingPointField"(
+        label: "RODecimalField",
+        labelPosition: "ABOVE",
+        value: local!decimalField,
+        saveInto: local!decimalField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_barcodeField"(
+        label: "BarcodeField",
+        labelPosition: "ABOVE",
+        value: local!barcodeField,
+        saveInto: local!barcodeField,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_barcodeField"(
+        label: "ROBarcodeField",
+        labelPosition: "ABOVE",
+        value: local!barcodeField,
+        saveInto: local!barcodeField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_barcodeField"(
+        label: "MaskedBarcodeField",
+        labelPosition: "ABOVE",
+        value: local!maksedBarcodeField,
+        saveInto: local!maksedBarcodeField,
+        refreshAfter: "UNFOCUS",
+        masked: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_barcodeField"(
+        label: "ROMaskedBarcodeField",
+        labelPosition: "ABOVE",
+        value: local!maksedBarcodeField,
+        saveInto: local!maksedBarcodeField,
+        refreshAfter: "UNFOCUS",
+        readOnly: true,
+        masked: true,
+        validations: {}
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_dateField"(
+        label: "DateField",
+        labelPosition: "ABOVE",
+        value: local!dateField,
+        saveInto: local!dateField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateField"(
+        label: "RODateField",
+        labelPosition: "ABOVE",
+        value: local!dateField,
+        saveInto: local!dateField,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField",
+        labelPosition: "ABOVE",
+        value: local!datetimeField,
+        saveInto: local!datetimeField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "RODatetimeField",
+        labelPosition: "ABOVE",
+        value: local!datetimeField,
+        saveInto: local!datetimeField,
+        readOnly: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dropdownField"(
+        label: "DropdownField",
+        labelPosition: "",
+        placeholderLabel: "--- Select a Value ---",
+        choiceLabels: {
+          "Option, 1",
+          "Option 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!DropdownField,
+        saveInto: local!DropdownField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_multipleDropdownField"(
+        label: "MultipleDropdownField",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Option 1",
+          "Option 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!multipleDropdownField,
+        saveInto: local!multipleDropdownField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dropdownField_v1"(
+        choiceLabels: {
+          "DropdownSearchBoxOption 1",
+          "DropdownSearchBoxOption 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        label: "SearchBoxDropdownField",
+        labelPosition: "",
+        placeholder: "--- Select a Value ---",
+        value: local!dropdownFieldWithSearch,
+        saveInto: local!dropdownFieldWithSearch,
+        searchDisplay: "ON",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_multipleDropdownField_v1"(
+        choiceLabels: {
+          "MultipleDropdownSearchBoxOption 1",
+          "MultipleDropdownSearchBoxOption 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        label: "SearchBoxMultipleDropdownField",
+        labelPosition: "ABOVE",
+        value: local!multipleDropdownFieldWithSearch,
+        saveInto: local!multipleDropdownFieldWithSearch,
+        searchDisplay: "ON",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_radioButtonField"(
+        label: "RadioField",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Option 1",
+          "Option 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!radioField,
+        saveInto: local!radioField,
+        choiceLayout: "STACKED",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_radioButtonField"(
+        label: "CardsStyleRadioField",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Option 3",
+          "Option 4"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!radioFieldCardsStyle,
+        saveInto: local!radioFieldCardsStyle,
+        choiceLayout: "STACKED",
+        choiceStyle: "CARDS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_checkboxField"(
+        label: "CheckboxField",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Option 1",
+          "Option 2"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!checkboxField,
+        saveInto: local!checkboxField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_checkboxField"(
+        label: "CardsStyleCheckboxField",
+        labelPosition: "ABOVE",
+        choiceLabels: {"Option 3", "Option 4"},
+        choiceValues: {1, 2},
+        value: local!checkboxFieldCardsStyle,
+        saveInto: local!checkboxFieldCardsStyle,
+        choiceStyle: "CARDS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_fileUploadField"(
+        label: "FileUploadField",
+        labelPosition: "ABOVE",
+        target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+        value: local!fileUploadField,
+        saveInto: local!fileUploadField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_fileUploadField_v1"(
+        label: "MultipleFileUploadField",
+        labelPosition: "ABOVE",
+        target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+        value: local!multipleFileUploadField,
+        saveInto: local!multipleFileUploadField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "buttonWithTooltipClicked",
+        value: fn!if(local!buttonWithTooltipToggle, "clicked", "not clicked"),
+        readOnly: fn!true()
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "buttonWithLoadingIndicatorClicked",
+        value: fn!if(local!buttonWithLoadingIndicator, "clicked", "not clicked"),
+        readOnly: fn!true()
+      ),
+      #"SYSTEM_SYSRULES_ButtonLayout"(
+        primaryButtons: {
+          #"SYSTEM_SYSRULES_buttonWidget_v1"(
+            label: "Enabled",
+            color: "#cc0000",
+            disabled: fn!false()
+          ),
+          #"SYSTEM_SYSRULES_ButtonWidget"(
+            label: "Disabled",
+            disabled: fn!true()
+          ),
+          #"SYSTEM_SYSRULES_buttonWidget_v1"(
+            label: "BtnWithTooltip",
+            tooltip: "my button tooltip",
+            saveInto: a!save(local!buttonWithTooltipToggle, fn!true()),
+            style: "SOLID",
+            color: "#cc0000"
+          ),
+          #"SYSTEM_SYSRULES_ButtonWidget"(
+            label: "BtnWithLoadingIndicator",
+            saveInto: a!save(local!buttonWithLoadingIndicator, fn!true()),
+            loadingIndicator: fn!true()
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        label: "EmptyRichTextField"
+      ),
+      #"SYSTEM_SYSRULES_tagField"(
+        label: "TagField",
+        tags: {
+          #"SYSTEM_SYSRULES_tagItem"(
+            text: "Silver Member",
+            backgroundColor: "#aaa9ad",
+            textColor: "#ffffff",
+            recordLink: #"SYSTEM_SYSRULES_userRecordLink"()
+          ),
+          #"SYSTEM_SYSRULES_tagItem"(
+            text: "Corporate Partner",
+            backgroundColor: "#990099"
+          )
+        },
+        size: "STANDARD"
+      )
+    },
+    isCollapsible: true
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47538"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491096"/>
+        <historyInfo versionUuid="_a-0000e019-a477-8000-b64d-01ef9001ef90_23591"/>
+        <historyInfo versionUuid="_a-0000e204-24d2-8000-9740-01ef9001ef90_24316"/>
+        <historyInfo versionUuid="_a-0000e350-4459-8000-3634-01ef9001ef90_27832"/>
+        <historyInfo versionUuid="_a-0000e36b-101c-8000-0d58-01ef9001ef90_6978"/>
+        <historyInfo versionUuid="_a-0000e425-f378-8000-f08b-6def906def90_8779"/>
+        <historyInfo versionUuid="_a-0000e425-f378-8000-f08b-6def906def90_8798"/>
+        <historyInfo versionUuid="_a-0000e504-5167-8000-4c94-a8ef90a8ef90_32322"/>
+        <historyInfo versionUuid="_a-0000e573-1e0e-8000-fad5-01ef9001ef90_31430"/>
+        <historyInfo versionUuid="_a-0000e573-1e0e-8000-fad5-01ef9001ef90_31468"/>
+        <historyInfo versionUuid="_a-0000e60f-f2c5-8000-cc8b-01ef9001ef90_31614"/>
+        <historyInfo versionUuid="_a-0000e632-3a10-8000-13a9-01ef9001ef90_32183"/>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32546"/>
+        <historyInfo versionUuid="_a-0000eab7-c543-8000-a5ba-01ef9001ef90_37661"/>
+        <historyInfo versionUuid="_a-0000eaeb-197c-8000-9ba4-011c48011c48_11346"/>
+    </history>
+</contentHaul>

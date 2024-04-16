@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491110</versionUuid>
+    <interface>
+        <name>AUT_removableRowsGridRow</name>
+        <uuid>fc90c4c5-a2b3-4aa6-aee1-10990bf2b545</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#"SYSTEM_SYSRULES_gridRowLayout"(
+  id: ri!index,
+  contents: {
+    #"SYSTEM_SYSRULES_textField"(
+      /* Labels are not visible in grid cells but are necessary to meet accessibility requirements */
+      label: "summary " &amp; ri!index,
+      readOnly: true,
+      value: ri!items[ri!index].summary,
+      saveInto: ri!items[ri!index].summary,
+      required: true
+    ),
+    #"SYSTEM_SYSRULES_imageField"(
+      label: "delete " &amp; ri!index,
+      images: #"SYSTEM_SYSRULES_documentImage"(
+        document: #"SYSTEM_SYSRULES_iconIndicator"("REMOVE"),
+        altText: "Remove",
+        caption: "Remove " &amp; ri!items[ri!index].summary,
+        link: #"SYSTEM_SYSRULES_dynamicLink"(
+          value: ri!index,
+          saveInto: {
+            a!save(ri!items, remove(ri!items, save!value)),
+            /* When modifying the size of the array used in a!applyComponents,  */
+            /* make the same change in the "token" array variable               */
+            a!save(ri!itemsToken, remove(ri!itemsToken, save!value))
+          }
+        )
+      ),
+      size: "ICON"
+    ),
+    #"SYSTEM_SYSRULES_linkField"(
+      label: "delete " &amp; ri!index,
+      align: "CENTER",
+      links: #"SYSTEM_SYSRULES_dynamicLink"(
+        label: char(10005),
+        value: ri!index,
+        saveInto: {
+          a!save(ri!items, remove(ri!items, save!value)),
+          /*
+           * When modifying the size of the array used in a!applyComponents,
+           * make the same change in the "token" array variable
+           */
+          a!save(ri!itemsToken, remove(ri!itemsToken, save!value))
+        }
+      )
+    )
+  }
+)</definition>
+        <namedTypedValue>
+            <name>index</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>items</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>itemsToken</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47586"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491110"/>
+    </history>
+</contentHaul>

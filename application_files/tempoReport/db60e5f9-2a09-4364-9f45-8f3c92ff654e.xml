@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>19317d20-b315-427e-8dda-616ca24dde4d</versionUuid>
+    <tempoReport a:uuid="db60e5f9-2a09-4364-9f45-8f3c92ff654e" name="Automated Test Report">
+        <a:description>Sample Test Report to be used for Automated testing</a:description>
+        <a:uiExpr>=#"_a-0000dc59-a427-8000-ba62-01ef9001ef90_2442"()</a:uiExpr>
+        <a:urlStub>9N6paA</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="ac20af8c-40b2-4888-94ca-8cfa0a628606"/>
+        <historyInfo versionUuid="19317d20-b315-427e-8dda-616ca24dde4d"/>
+    </history>
+</tempoReportHaul>

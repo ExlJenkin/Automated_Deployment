@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491097</versionUuid>
+    <interface>
+        <name>AUT_DateAndDatetimeSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2256</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!dateField1,
+  local!dateField2,
+  local!datetimeField1,
+  local!datetimeField2,
+  local!datetimeField3,
+  local!datetimeField4,
+  local!datetimeField5,
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Dates &amp; Datetimes",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_dateField"(
+        label: "DateField (date)",
+        labelPosition: "ABOVE",
+        value: local!dateField1,
+        saveInto: local!dateField1,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateField"(
+        label: "DateField (+5 days)",
+        labelPosition: "ABOVE",
+        value: local!dateField2,
+        saveInto: local!dateField2,
+        validations: {}
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField (date)",
+        labelPosition: "ABOVE",
+        value: local!datetimeField1,
+        saveInto: local!datetimeField1,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField (datetime)",
+        labelPosition: "ABOVE",
+        value: local!datetimeField2,
+        saveInto: local!datetimeField2,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField (+5 minutes)",
+        labelPosition: "ABOVE",
+        value: local!datetimeField3,
+        saveInto: local!datetimeField3,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField (+5 hours)",
+        labelPosition: "ABOVE",
+        value: local!datetimeField4,
+        saveInto: local!datetimeField4,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "DatetimeField (+5 days)",
+        labelPosition: "ABOVE",
+        value: local!datetimeField5,
+        saveInto: local!datetimeField5,
+        validations: {}
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47544"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491097"/>
+    </history>
+</contentHaul>

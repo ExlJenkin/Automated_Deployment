@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e632-39e5-8000-1692-01ef9001ef90_32540</versionUuid>
+    <interface>
+        <name>AUT_CardLayoutSection</name>
+        <uuid>_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26166</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>fn!load(
+local!cardText,
+local!cardInteger,
+local!cardClicked: "Not Clicked",
+  {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Card Layout Section",
+      contents: {
+        #"SYSTEM_SYSRULES_cardLayout"(
+          height: "SHORT",
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"()
+          },
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click card",
+            value: "First Card",
+            saveInto: local!cardClicked
+          )
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          readOnly: fn!true()
+        ),
+        #"SYSTEM_SYSRULES_cardLayout"(
+          height: "MEDIUM",
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"()
+          },
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click card",
+            value: "Second Card - SEMI_ROUNDED",
+            saveInto: local!cardClicked
+          ),
+          shape: "SEMI_ROUNDED"
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          readOnly: fn!true()
+        ),
+        #"SYSTEM_SYSRULES_cardLayout"(
+          height: "TALL",
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"(),
+            #"SYSTEM_SYSRULES_textField"()
+          },
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click card",
+            value: "Third Card - ROUNDED",
+            saveInto: local!cardClicked
+          ),
+          shape: "ROUNDED"
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Card Clicked",
+      value: local!cardClicked,
+      readOnly: fn!true()
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26192"/>
+        <historyInfo versionUuid="_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25441"/>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32540"/>
+    </history>
+</contentHaul>

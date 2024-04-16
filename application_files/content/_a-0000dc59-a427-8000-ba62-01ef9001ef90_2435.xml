@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491084</versionUuid>
+    <interface>
+        <name>AUT_TestDataInput</name>
+        <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2435</uuid>
+        <description>Input to Data input CDT</description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!testData: if(
+    isnull(ri!testID),
+    null,
+    #"_a-0000dc59-a427-8000-ba62-01ef9001ef90_2445"(ri!testID)
+  ),
+  #"SYSTEM_SYSRULES_formLayout"(
+    label: "Automated Testing Data Input",
+    instructions: "Fill out this form to create a new record",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Title",
+        labelPosition: "ABOVE",
+        instructions: "Text Field",
+        value: local!testData.testText,
+        saveInto: local!testData.testText,
+        refreshAfter: "UNFOCUS",
+        required: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_integerField"(
+        label: "Quantity",
+        labelPosition: "ABOVE",
+        instructions: "Integer Field",
+        value: local!testData.testInt,
+        saveInto: local!testData.testInt,
+        refreshAfter: "UNFOCUS",
+        required: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_floatingPointField"(
+        label: "Price",
+        labelPosition: "ABOVE",
+        instructions: "Decimal Field",
+        value: local!testData.testDecimal,
+        saveInto: local!testData.testDecimal,
+        refreshAfter: "UNFOCUS",
+        required: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dateTimeField"(
+        label: "Start Date",
+        labelPosition: "ABOVE",
+        instructions: "Datetime Field",
+        value: local!testData.testDateTime,
+        saveInto: local!testData.testDateTime,
+        required: true,
+        validations: {}
+      )
+    },
+    secondColumnContents: {
+      /* Add components here for a two-column form */
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+          label: "Submit",
+          style: "PRIMARY",
+          value: local!testData,
+          saveInto: ri!testData
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+          label: "Cancel",
+          style: "NORMAL",
+          value: true,
+          saveInto: ri!cancel,
+          skipValidation: true
+        )
+      }
+    ),
+    validations: {}
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>testData</name>
+            <type>
+                <name>AUT_TestData</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>testID</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47478"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491084"/>
+    </history>
+</contentHaul>

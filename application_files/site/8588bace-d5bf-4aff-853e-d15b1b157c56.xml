@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>54d7ebfd-873f-4c79-b904-e24597abba38</versionUuid>
+  <site a:uuid="8588bace-d5bf-4aff-853e-d15b1b157c56" name="Automated Test Site">
+    <description/>
+    <urlStub>automated-test-site</urlStub>
+    <page a:uuid="4de745c5-dfe6-3d18-b2b0-c097f2effd6e">
+      <staticName>Automated Test Grid</staticName>
+      <description/>
+      <urlStub>automated-test-grid</urlStub>
+      <uiObject a:uuid="9e125eec-8f0d-4051-abde-2bf6b5aef04d" xsi:type="a:RecordType"/>
+      <iconId>f03a</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <page a:uuid="573aa421-01e2-3418-9346-287a88d0cb6d">
+      <staticName>Data Input</staticName>
+      <description/>
+      <urlStub>data-input</urlStub>
+      <uiObject a:uuid="0002dc5a-2a82-8000-ba62-014d98014d98" xsi:type="a:ProcessModel"/>
+      <iconId>f055</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <page a:uuid="ff3d6dda-326e-3cbd-876a-86d44ef3c64a">
+      <staticName>All Fields</staticName>
+      <description/>
+      <urlStub>all-fields</urlStub>
+      <uiObject a:uuid="0002dd1e-a82f-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+      <iconId>f19c</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <page a:uuid="e6f03adb-f4b0-471c-8973-e2f72f67e488">
+      <staticName>View</staticName>
+      <description/>
+      <urlStub>view</urlStub>
+      <uiObject a:uuid="_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45794" xsi:type="a:ContentFreeformRule"/>
+      <iconId>f016</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>WIDE</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <page a:uuid="f1ec1332-ddfd-49c8-abc5-54987d0600aa">
+      <staticName>Report</staticName>
+      <description/>
+      <urlStub>report</urlStub>
+      <iconId>f114</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+      <page a:uuid="f1641697-02fa-4f7e-bedf-e7c49e7e01f2">
+        <staticName>View</staticName>
+        <description/>
+        <urlStub>view_report</urlStub>
+        <uiObject a:uuid="_a-0000ea6c-9e9b-8000-7bc3-01ef9001ef90_45806" xsi:type="a:ContentFreeformRule"/>
+        <iconId>f016</iconId>
+        <visibilityExpr>fn!true()</visibilityExpr>
+        <pageWidth>WIDE</pageWidth>
+        <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+        <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+      </page>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <page a:uuid="d8d9c277-0651-4034-a8b3-473b9c9cc4e1">
+      <staticName>Mail</staticName>
+      <description/>
+      <urlStub>mail</urlStub>
+      <uiObject a:uuid="_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7838" xsi:type="a:ContentFreeformRule"/>
+      <iconId>f016</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>WIDE</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <visibility>268435456</visibility>
+    <faviconRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_FAVICON" xsi:type="a:CollaborationDocument"/>
+    <logoRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_LOGO" xsi:type="a:CollaborationDocument"/>
+    <accentColor>#1D659C</accentColor>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>false</showRecordNews>
+    <tasksInSitesVisibility>HIDDEN</tasksInSitesVisibility>
+    <buttonShape>SQUARED</buttonShape>
+    <navigationBarStyle>STYLE1</navigationBarStyle>
+    <inputShape>SQUARED</inputShape>
+    <isSystem>false</isSystem>
+    <displayName>Automated Test Site</displayName>
+    <isStaticDisplayName>true</isStaticDisplayName>
+    <nameExprIsEvaluable>true</nameExprIsEvaluable>
+    <primaryNavLayoutType>TOPBAR</primaryNavLayoutType>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000dc5b-1c90-8000-ba62-011e94011e94_8</groupUuid>
+      </groups>
+    </role>
+    <role name="site_viewer">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="c39d929f-c0e0-4ea8-91c7-38b73983ce83"/>
+    <historyInfo versionUuid="37e74cc4-4584-46aa-a2a6-028f8f977aa6"/>
+    <historyInfo versionUuid="54d7ebfd-873f-4c79-b904-e24597abba38"/>
+  </history>
+</siteHaul>

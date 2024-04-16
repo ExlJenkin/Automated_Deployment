@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e423-4162-8000-3e0e-acef90acef90_8427</versionUuid>
+    <interface>
+        <name>AUT_LinksSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2271</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!linkClicked: "Not clicked",
+  local!iconLinkClicked: fn!false(),
+  local!iconLinkWithAltTextClicked: fn!false(),
+  local!standaloneIconLinkWithAltText: fn!false(),
+  local!standaloneIconLinkClicked: fn!false(),
+  local!documentImageLinkWithAltTextClicked: fn!false(),
+  local!documentImageLinkWithoutAltTextClicked: fn!false(),
+  local!avatarDocumentImageLinkWithAltTextClicked: fn!false(),
+  local!avatarDocumentImageLinkWithoutAltTextClicked: fn!false(),
+  local!richTextDocumentImageLinkWithAltTextClicked: fn!false(),
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Links",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_linkField"(
+        links: #"SYSTEM_SYSRULES_dynamicLink"(
+          label: "Click link",
+          value: "Clicked",
+          saveInto: local!linkClicked
+        )
+      ),
+      #"SYSTEM_SYSRULES_linkField"(
+        links: #"SYSTEM_SYSRULES_dynamicLink"(
+          label: "Click link",
+          value: "Clicked again",
+          saveInto: local!linkClicked
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Link Clicked",
+        value: local!linkClicked,
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_linkField"(
+        label: "Link with Value",
+        links: #"SYSTEM_SYSRULES_dynamicLink"(
+          label: "Link Label"
+        )
+      ),
+      #"SYSTEM_SYSRULES_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"),
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: fn!not(local!documentImageLinkWithAltTextClicked),
+            saveInto: local!documentImageLinkWithAltTextClicked
+          ),
+          altText: "document image alt text"
+        ),
+        size: "ICON"
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "document image link alt text clicked",
+        value: fn!if(local!documentImageLinkWithAltTextClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"),
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: fn!not(local!documentImageLinkWithoutAltTextClicked),
+            saveInto: local!documentImageLinkWithoutAltTextClicked
+          ),
+        ),
+        size: "ICON"
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "document image link clicked",
+        value: fn!if(local!documentImageLinkWithoutAltTextClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"),
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: fn!not(local!avatarDocumentImageLinkWithAltTextClicked),
+            saveInto: local!avatarDocumentImageLinkWithAltTextClicked
+          ),
+          altText: "avatar document image alt text"
+        ),
+        size: "ICON",
+        style: "AVATAR"
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "avatar document image link alt text clicked",
+        value: fn!if(local!avatarDocumentImageLinkWithAltTextClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_imageField_v1"(
+        images: #"SYSTEM_SYSRULES_documentImage"(
+          document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"),
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            value: fn!not(local!avatarDocumentImageLinkWithoutAltTextClicked),
+            saveInto: local!avatarDocumentImageLinkWithoutAltTextClicked
+          )
+        ),
+        size: "ICON",
+        style: "AVATAR"
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "avatar document image link clicked",
+        value: fn!if(local!avatarDocumentImageLinkWithoutAltTextClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: {
+          #"SYSTEM_SYSRULES_richTextImage"(
+            image: #"SYSTEM_SYSRULES_documentImage"(
+              document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"),
+              link: #"SYSTEM_SYSRULES_dynamicLink"(
+                value: fn!not(local!richTextDocumentImageLinkWithAltTextClicked),
+                saveInto: local!richTextDocumentImageLinkWithAltTextClicked
+              ),
+              altText: "rich text document image link alt text"
+            )
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "rich text document image link clicked",
+        value: fn!if(local!richTextDocumentImageLinkWithAltTextClicked, "clicked", "not clicked"),
+        readOnly: fn!true()
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        label: "Rich Text Field",
+        value: {
+          #"SYSTEM_SYSRULES_richTextItem"(
+            text: "Safe Link",
+            link: #"SYSTEM_SYSRULES_safeLink"(
+              label: "My Safe Link",
+              uri: "https://google.com"
+            )
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: {
+          #"SYSTEM_SYSRULES_richTextItem"(
+            text: "Strong Style Link",
+            style: "STRONG",
+            link: #"SYSTEM_SYSRULES_dynamicLink"(
+              label: "My Safe Link",
+              value: "https://google.com"
+            )
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_linkField"(
+        links: {
+          #"SYSTEM_SYSRULES_documentDownloadLink"(
+            label: "Document Download Link",
+            document: #"SYSTEM_SYSRULES_iconIndicator"("FACE_HAPPY")
+          )
+        }
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: #"SYSTEM_SYSRULES_richTextIcon"(
+          icon: "check",
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click icon link",
+            value: fn!not(local!iconLinkWithAltTextClicked),
+            saveInto: local!iconLinkWithAltTextClicked
+          ),
+          altText: "icon link alt text"
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Icon link alt text clicked",
+        value: fn!if(local!iconLinkWithAltTextClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: #"SYSTEM_SYSRULES_richTextIcon"(
+          icon: "check",
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click icon link",
+            value: fn!not(local!iconLinkClicked),
+            saveInto: local!iconLinkClicked
+          )
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Icon link clicked",
+        value: fn!if(local!iconLinkClicked, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: #"SYSTEM_SYSRULES_richTextIcon"(
+          icon: "check",
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click icon link",
+            value: fn!not(local!standaloneIconLinkWithAltText),
+            saveInto: local!standaloneIconLinkWithAltText
+          ),
+          linkStyle: "STANDALONE",
+          altText: "standalone icon link alt text"
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Standalone icon link alt text clicked",
+        value: fn!if(local!standaloneIconLinkWithAltText, "clicked", "not clicked"),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_richTextDisplayField"(
+        value: #"SYSTEM_SYSRULES_richTextIcon"(
+          icon: "check",
+          link: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "Click icon link",
+            value: fn!not(local!standaloneIconLinkClicked),
+            saveInto: local!standaloneIconLinkClicked
+          ),
+          linkStyle: "STANDALONE"
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Standalone icon link clicked",
+        value: fn!if(local!standaloneIconLinkClicked, "clicked", "not clicked"),
+        readOnly: true
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47568"/>
+        <historyInfo versionUuid="_a-0000df57-3410-8000-9ba2-011c48011c48_373046"/>
+        <historyInfo versionUuid="_a-0000e3cf-df02-8000-db60-cbef90cbef90_31161"/>
+        <historyInfo versionUuid="_a-0000e419-b2f3-8000-af74-dfef90dfef90_31321"/>
+        <historyInfo versionUuid="_a-0000e423-4162-8000-3e0e-acef90acef90_8427"/>
+    </history>
+</contentHaul>

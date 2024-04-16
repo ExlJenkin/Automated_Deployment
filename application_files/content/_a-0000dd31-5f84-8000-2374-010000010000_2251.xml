@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e721-c88a-8000-b669-01ef9001ef90_33399</versionUuid>
+    <interface>
+        <name>AUT_AllFields</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2251</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!randomAlphabetTextField,
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: "All Fields",
+    instructions: "Instructions",
+    contents: {
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2253"(),
+      #"_a-0000e30d-de85-8000-fd2a-01ef9001ef90_24593"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2256"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2258"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2266"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2271"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2264"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2268"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2354"(),
+      #"_a-0000dd31-5f84-8000-2374-010000010000_2273"(),
+      #"_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26166"(),
+      #"_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26193"(),
+      #"_a-0000e0bf-af33-8000-4b35-01ef9001ef90_25570"(),
+      #"_a-0000e332-b3b3-8000-af80-01ef9001ef90_26161"(),
+      #"_a-0000e369-e85b-8000-e426-01ef9001ef90_26072"(),
+      #"_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31507"(),
+      #"_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31399"(),
+      #"_a-0000e632-39e5-8000-1692-01ef9001ef90_32615"(),
+      #"_a-0000e721-c88a-8000-b669-01ef9001ef90_33382"()
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidget"(
+          label: "Submit",
+          saveInto: {},
+          style: "PRIMARY",
+          submit: true
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+          label: "Cancel",
+          value: true,
+          style: "NORMAL",
+          skipValidation: true
+        )
+      }
+    ),
+    validations: {}
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47610"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491104"/>
+        <historyInfo versionUuid="_a-0000e011-b8fd-8000-c083-01ef9001ef90_23257"/>
+        <historyInfo versionUuid="_a-0000e0a5-7ed1-8000-e25a-01ef9001ef90_26206"/>
+        <historyInfo versionUuid="_a-0000e10f-05de-8000-d194-01ef9001ef90_20297"/>
+        <historyInfo versionUuid="_a-0000e312-f844-8000-f43a-01ef9001ef90_25956"/>
+        <historyInfo versionUuid="_a-0000e332-b3b3-8000-af80-01ef9001ef90_26173"/>
+        <historyInfo versionUuid="_a-0000e369-e85b-8000-e426-01ef9001ef90_26104"/>
+        <historyInfo versionUuid="_a-0000e423-4162-8000-3e0e-acef90acef90_8439"/>
+        <historyInfo versionUuid="_a-0000e428-17cf-8000-13ec-f0ef90f0ef90_31524"/>
+        <historyInfo versionUuid="_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31416"/>
+        <historyInfo versionUuid="_a-0000e632-39e5-8000-1692-01ef9001ef90_32614"/>
+        <historyInfo versionUuid="_a-0000e721-c88a-8000-b669-01ef9001ef90_33399"/>
+    </history>
+</contentHaul>

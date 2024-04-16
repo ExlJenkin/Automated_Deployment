@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e721-c88a-8000-b669-01ef9001ef90_33544</versionUuid>
+    <interface>
+        <name>AUT_CardChoiceSection</name>
+        <uuid>_a-0000e721-c88a-8000-b669-01ef9001ef90_33382</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!selectOne,
+  local!selectMultiple,
+  {
+    #"SYSTEM_SYSRULES_cardChoiceField"(
+      label: "Card Choices - Select One",
+      data: {
+        a!map(id: 1, icon: "smile-o", primaryText: "First Choice", secondaryText: ""),
+        a!map(id: 2, icon: "meh-o", primaryText: "Second Choice", secondaryText: "")
+      },
+      cardTemplate: #"SYSTEM_SYSRULES_cardTemplateTile"(
+        id: fv!data.id,
+        primaryText: fv!data.primaryText,
+        secondaryText: fv!data.secondaryText,
+        icon: fv!data.icon
+      ),
+      value: local!selectOne,
+      saveInto: local!selectOne,
+      maxSelections: 1,
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_cardChoiceField"(
+      label: "Card Choices - Select Multiple",
+      data: {
+        a!map(id: 1, icon: "smile-o", primaryText: "First Choice", secondaryText: "secondary text"),
+        a!map(id: 2, icon: "meh-o", primaryText: "Second Choice", secondaryText: "secondary text")
+      },
+      cardTemplate: #"SYSTEM_SYSRULES_cardTemplateTile"(
+        id: fv!data.id,
+        primaryText: fv!data.primaryText,
+        secondaryText: fv!data.secondaryText,
+        icon: fv!data.icon
+      ),
+      value: local!selectMultiple,
+      saveInto: local!selectMultiple,
+      maxSelections: 2,
+      validations: {}
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e721-c88a-8000-b669-01ef9001ef90_33393"/>
+        <historyInfo versionUuid="_a-0000e721-c88a-8000-b669-01ef9001ef90_33544"/>
+    </history>
+</contentHaul>

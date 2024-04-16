@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>4a74beb1-0a7e-470b-9424-134b29da1a6c</versionUuid>
+    <webApi a:uuid="f4e798fa-5d49-4efb-afb5-5a4c7691fda9" name="AUT_TestPostWebApi">
+        <a:description></a:description>
+        <a:expression>#"SYSTEM_SYSRULES_httpResponse"(
+  statusCode: 200,
+  body: http!request.body &amp; "1"
+)</a:expression>
+        <a:urlAlias>test-post-web-api</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+        <a:loggingEnabled>false</a:loggingEnabled>
+    </webApi>
+    <roleMap>
+        <role name="web_api_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dc59-058c-8000-ba62-011e94011e94_7</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:body>asdf</a:body>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="4cccce81-cb7c-4c03-8b35-153e2733a69a"/>
+        <historyInfo versionUuid="4a74beb1-0a7e-470b-9424-134b29da1a6c"/>
+    </history>
+</webApiHaul>

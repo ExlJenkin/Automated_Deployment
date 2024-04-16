@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e578-afb4-8000-a47b-01ef9001ef90_7322</versionUuid>
+    <interface>
+        <name>AUT_RecordActionFieldSection</name>
+        <uuid>_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31399</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  /* Make sure that the Initialize action has been run 
+     before testing this section. If the action has not been run, 
+     these fields will not appear in the UI */
+  #"SYSTEM_SYSRULES_recordActionField"(
+    actions: {
+      #"SYSTEM_SYSRULES_recordActionItem"(
+        action: #"urn:appian:record-action:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/7ee8cdf7-21ed-4ad9-a9d8-6b45ea71fe4a",
+        identifier: 2
+      ),
+      #"SYSTEM_SYSRULES_recordActionItem"(
+        action: #"urn:appian:record-action:v1:9e125eec-8f0d-4051-abde-2bf6b5aef04d/f039413f-babc-49ac-899a-6b0735f4985c",
+        identifier: 1
+      )
+    },
+    style: "MENU"
+  ),
+  #"SYSTEM_SYSRULES_recordActionField"(
+    actions: {
+      #"SYSTEM_SYSRULES_forEach"(
+        items: fn!enumerate(15),
+        expression: #"SYSTEM_SYSRULES_recordActionItem"(
+          action: #"urn:appian:record-action:v1:9e125eec-8f0d-4051-abde-2bf6b5aef04d/f039413f-babc-49ac-899a-6b0735f4985c",
+          identifier: 1
+        )
+      ),
+      #"SYSTEM_SYSRULES_recordActionItem"(
+        action: #"urn:appian:record-action:v1:e4471773-673d-4dd1-9cf1-f7bf09fc80fe/7ee8cdf7-21ed-4ad9-a9d8-6b45ea71fe4a",
+        identifier: 2
+      )
+    },
+    style: "MENU_ICON"
+  )
+}</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e578-64ee-8000-4c0f-01ef9001ef90_31410"/>
+        <historyInfo versionUuid="_a-0000e578-afb4-8000-a47b-01ef9001ef90_7322"/>
+    </history>
+</contentHaul>

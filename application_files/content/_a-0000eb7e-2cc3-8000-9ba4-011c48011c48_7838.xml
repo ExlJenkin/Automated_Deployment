@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eba5-7372-8000-9ba4-011c48011c48_8014</versionUuid>
+    <interface>
+        <name>AUT_PaneComponent</name>
+        <uuid>_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7838</uuid>
+        <description></description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2422</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!allMessages: {
+    a!map(from: "Marie Richards",  stampColor: "#990000", to: "me",                             subject: "Request for additional information",   time: "11:29 AM",  isRead: true, message: "REQUEST!"),
+    a!map(from: "Brandon Pittman", stampColor: "#3d85c6", to: "me, Rita Ramos, and Jorge Pena", subject: "Upcoming facility audit",              time: "10:52 AM",  isRead: true, message: "AUDIT!"),
+    a!map(from: "Clay Nelson",     stampColor: "#38761d", to: "me and Alice Dixon",             subject: "Complete onboarding for new supplier", time: "Yesterday", isRead: false, message: "ONBOARDING!"),
+    a!map(from: "Darnell Warner",  stampColor: "#351c75", to: "me",                             subject: "Upcoming facility audit",              time: "Yesterday", isRead: false, message: "FACILITY!"),
+  },
+  local!sideNavPages: {
+    a!map(icon: "user-tag",             name: "New Messages", filter: #"_a-0000eba5-7372-8000-9ba4-011c48011c48_7954"),
+    a!map(icon: "envelope",             name: "All Messages", filter: fn!true),
+  },
+  local!selectedPage: 1,
+  local!selectedMessageIndex:2,
+  local!showMessage: true,
+  local!messages: fn!filter(fn!index(local!sideNavPages, local!selectedPage).filter, local!allMessages),
+  if(not(#"SYSTEM_SYSRULES_isPageWidth"({"TABLET_PORTRAIT", "PHONE"})),
+  /* Pane layout for non-mobile interfaces */
+  #"SYSTEM_SYSRULES_paneLayout"(
+    panes: {
+      /* Side navigation column for other page widths */
+      #"SYSTEM_SYSRULES_pane"(
+        contents: {
+          #"SYSTEM_SYSRULES_cardLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_forEach"(
+                items: local!sideNavPages,
+                expression: #"SYSTEM_SYSRULES_cardLayout"(
+                  contents: {
+                    #"SYSTEM_SYSRULES_sideBySideLayout"(
+                      items: {
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                text: char(448),
+                                color: if(
+                                  local!selectedPage = fv!index,
+                                  "STANDARD",
+                                  "#3B464E"
+                                ),
+                                size: "LARGE"
+                              )
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        ),
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                text: fv!item.name,
+                                size: "MEDIUM",
+                                style: if(
+                                  local!selectedPage = fv!index,
+                                  "STRONG",
+                                  "PLAIN"
+                                )
+                              )
+                            }
+                          )
+                        )
+                      },
+                      alignVertical: "MIDDLE",
+                      spacing: "DENSE"
+                    )
+                  },
+                  /* Link to update selected page */
+                  link: #"SYSTEM_SYSRULES_dynamicLink"(value: fv!index,
+                    saveInto: {
+                      a!save(local!selectedPage, fv!index),
+                      a!save(local!messages, fn!filter(fv!item.filter, local!allMessages))
+                    }),
+                  style: "#3B464E",
+                  padding: "NONE",
+                  showBorder: false,
+                  accessibilityText: if(
+                    local!selectedPage = fv!index,
+                    "Selected tab.",
+                    "Unselected tab. Press enter to select tab."
+                  )
+                )
+              )
+            },
+            style: "#3B464E",
+            showBorder: false
+          )
+        },
+        width: "NARROW",
+        backgroundColor: "#3B464E",
+        padding: "EVEN_LESS",
+        showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"({"TABLET_PORTRAIT", "PHONE"}))
+      ),
+      /* Message list pane */
+      #"SYSTEM_SYSRULES_pane"(
+        contents: {
+          /* Page name on phone */
+          #"SYSTEM_SYSRULES_cardLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                labelPosition: "COLLAPSED",
+                value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                  text: index(
+                    local!sideNavPages.name,
+                    local!selectedPage,
+                    {}
+                  ),
+                  size: "MEDIUM",
+                  style: "STRONG"
+                )
+              )
+            },
+            showWhen: #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+            showBorder: false
+          ),
+          /* Message cards */
+          #"SYSTEM_SYSRULES_forEach"(
+            items: local!messages,
+            expression: #"SYSTEM_SYSRULES_cardLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_sideBySideLayout"(
+                  items: {
+                    #"SYSTEM_SYSRULES_sideBySideItem"(
+                      item: #"SYSTEM_SYSRULES_stampField"(
+                        labelPosition: "COLLAPSED",
+                        text: initials(fv!item.from),
+                        backgroundColor: fv!item.stampColor,
+                        contentColor: "STANDARD",
+                        size: "TINY"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    #"SYSTEM_SYSRULES_sideBySideItem"(
+                      item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: fv!item.from,
+                            style: if(
+                              fv!item.isRead,
+                              "PLAIN",
+                              "STRONG"
+                            )
+                          ),
+                          " ",
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: "to" &amp; " " &amp; fv!item.to,
+                            color: "SECONDARY"
+                          ),
+                          char(10),
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: fv!item.subject,
+                            color: "STANDARD",
+                            style: if(
+                              fv!item.isRead,
+                              "PLAIN",
+                              "STRONG"
+                            )
+                          )
+                        }
+                      )
+                    ),
+                    #"SYSTEM_SYSRULES_sideBySideItem"(
+                      item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: fv!item.time,
+                            color: if(
+                              fv!item.isRead,
+                              "SECONDARY",
+                              "STANDARD"
+                            ),
+                            style: if(
+                              fv!item.isRead,
+                              "PLAIN",
+                              "STRONG"
+                            )
+                          )
+                        }
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE"
+                )
+              },
+              /* Link to update selected message and mark message as read */
+              link: #"SYSTEM_SYSRULES_dynamicLink"(
+                value:fv!index,
+                saveInto: {
+                  local!selectedMessageIndex,
+                  if(
+                    #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                    a!save(local!showMessage, true),
+                    {}
+                  )
+                }
+              ),
+              style: if(
+                and(
+                  not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                  local!selectedMessageIndex = fv!index
+                ),
+                "NONE",
+                "#f0f0f0"
+              ),
+              padding: if(
+                not(#"SYSTEM_SYSRULES_isPageWidth"("TABLET_LANDSCAPE")),
+                "STANDARD",
+                "LESS"
+              ),
+              showBorder: false
+            )
+          )
+        },
+        width: if(
+          #"SYSTEM_SYSRULES_isPageWidth"({"DESKTOP_NARROW", "TABLET_LANDSCAPE", "TABLET_PORTRAIT"}),
+          "NARROW_PLUS",
+          "MEDIUM_PLUS"
+        ),
+        backgroundColor: "#f0f0f0",
+        padding: "EVEN_LESS",
+        showWhen: if(
+          #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+          not(local!showMessage),
+          true
+        )
+      ),
+      /* Selected message pane */
+      #"SYSTEM_SYSRULES_pane"(
+        contents: {
+          #"SYSTEM_SYSRULES_cardLayout"(
+            contents: {
+              /* Back button to messages list on phone */
+              #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                contents: {
+                  #"SYSTEM_SYSRULES_richTextDisplayField"(
+                    labelPosition: "COLLAPSED",
+                    value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                      text: {
+                        #"SYSTEM_SYSRULES_richTextIcon"(
+                          icon: "chevron-left",
+                          altText: "Back arrow"
+                        ),
+                        " ",
+                        "All messages"
+                      },
+                      link: #"SYSTEM_SYSRULES_dynamicLink"(value: false, saveInto: local!showMessage),
+                      linkStyle: "STANDALONE"
+                    )
+                  )
+                },
+                showWhen: #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                divider: "BELOW"
+              ),
+              a!localVariables(
+                local!selectedMessage: index(
+                  local!messages,
+                  local!selectedMessageIndex,
+                  {}
+                ),
+                local!selectedMessageAttachments: {
+                  a!map(id: 1, name: "Facility Fact Sheet.pdf", size: "178KB", type: "pdf")
+                },
+                local!numOfAttachments: length(local!selectedMessageAttachments),
+                /* Number of columns for attachments */
+                local!numOfCols: 2,
+                {
+                  /* Selected message header */
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_columnsLayout"(
+                        columns: {
+                          #"SYSTEM_SYSRULES_columnLayout"(
+                            contents: {
+                              #"SYSTEM_SYSRULES_stampField"(
+                                labelPosition: "COLLAPSED",
+                                text: initials(local!selectedMessage.from),
+                                backgroundColor: local!selectedMessage.stampColor,
+                                contentColor: "STANDARD",
+                                size: if(#"SYSTEM_SYSRULES_isPageWidth"("PHONE"), "TINY", "SMALL")
+                              )
+                            },
+                            width: "EXTRA_NARROW"
+                          ),
+                          #"SYSTEM_SYSRULES_columnLayout"(
+                            contents: {
+                              #"SYSTEM_SYSRULES_sideBySideLayout"(
+                                items: {
+                                  #"SYSTEM_SYSRULES_sideBySideItem"(
+                                    item: #"SYSTEM_SYSRULES_stampField"(
+                                      labelPosition: "COLLAPSED",
+                                      text: initials(local!selectedMessage.from),
+                                      backgroundColor: local!selectedMessage.stampColor,
+                                      contentColor: "STANDARD",
+                                      size: if(
+                                        #"SYSTEM_SYSRULES_isPageWidth"({ "TABLET_PORTRAIT", "PHONE" }),
+                                        "TINY",
+                                        "SMALL"
+                                      )
+                                    ),
+                                    width: "MINIMIZE",
+                                    showWhen: false
+                                  ),
+                                  #"SYSTEM_SYSRULES_sideBySideItem"(
+                                    item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        local!selectedMessage.from,
+                                        " ",
+                                        #"SYSTEM_SYSRULES_richTextItem_v1"(text: "to me" &amp; ", ", color: "SECONDARY"),
+                                        #"SYSTEM_SYSRULES_richTextItem_v1"(text: "Rita Ramos", color: "ACCENT"),
+                                        #"SYSTEM_SYSRULES_richTextItem_v1"(text: ", " &amp; "and" &amp; " ", color: "SECONDARY"),
+                                        #"SYSTEM_SYSRULES_richTextItem_v1"(text: "Jorge Pena", color: "ACCENT")
+                                      },
+                                      preventWrapping: true
+                                    )
+                                  ),
+                                  #"SYSTEM_SYSRULES_sideBySideItem"(
+                                    item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                          text: local!selectedMessage.time,
+                                          color: "SECONDARY",
+                                          size: if(
+                                            #"SYSTEM_SYSRULES_isPageWidth"({ "TABLET_PORTRAIT", "PHONE" }),
+                                            "SMALL",
+                                            "STANDARD"
+                                          )
+                                        )
+                                      },
+                                      align: "RIGHT"
+                                    ),
+                                    width: "MINIMIZE"
+                                  )
+                                },
+                                alignVertical: "MIDDLE",
+                                marginBelow: "NONE"
+                              ),
+                              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                labelPosition: "COLLAPSED",
+                                value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                  text: local!selectedMessage.subject,
+                                  size: if(
+                                    #"SYSTEM_SYSRULES_isPageWidth"({"TABLET_LANDSCAPE", "TABLET_PORTRAIT", "PHONE"}),
+                                    "MEDIUM",
+                                    "MEDIUM_PLUS"
+                                  )
+                                ),
+                                preventWrapping: true
+                              )
+                            },
+                            width: if(
+                              #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                              "MEDIUM_PLUS",
+                              "AUTO"
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE",
+                        stackWhen: "NEVER"
+                      )
+                    },
+                    divider: "BELOW"
+                  ),
+                  /* Selected message text */
+                  #"SYSTEM_SYSRULES_richTextDisplayField"(
+                    labelPosition: "COLLAPSED",
+                    value: {
+                      fn!index(local!messages, local!selectedMessageIndex).message
+                    }
+                  ),
+                  /* Selected message attachments */
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        labelPosition: "COLLAPSED",
+                        value: local!numOfAttachments &amp; " " &amp; if(local!numOfAttachments &gt; 1, "Attachments", "Attachment")
+                      ),
+                      #"SYSTEM_SYSRULES_columnsLayout"(
+                        columns: #"SYSTEM_SYSRULES_forEach"(
+                          items: enumerate(local!numOfCols) + 1,
+                          expression: a!localVariables(
+                            local!colIndex: fv!index,
+                            #"SYSTEM_SYSRULES_columnLayout"(
+                              contents: {
+                                #"SYSTEM_SYSRULES_forEach"(
+                                  items: local!selectedMessageAttachments,
+                                  expression: #"SYSTEM_SYSRULES_cardLayout"(
+                                    contents: {
+                                      #"SYSTEM_SYSRULES_sideBySideLayout"(
+                                        items: {
+                                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                              labelPosition: "COLLAPSED",
+                                              value: {
+                                                #"SYSTEM_SYSRULES_richTextIcon"(
+                                                  icon: "file-" &amp; fv!item.type &amp; "-o",
+                                                  altText: fv!item.type,
+                                                  color: "ACCENT",
+                                                  size: "LARGE"
+                                                )
+                                              }
+                                            ),
+                                            width: "MINIMIZE"
+                                          ),
+                                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                              labelPosition: "COLLAPSED",
+                                              value: {
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                                  text: fv!item.name,
+                                                  style: "STRONG"
+                                                ),
+                                                char(10),
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: fv!item.size, color: "SECONDARY")
+                                              }
+                                            )
+                                          )
+                                        },
+                                        alignVertical: "MIDDLE"
+                                      )
+                                    },
+                                    link: #"SYSTEM_SYSRULES_dynamicLink"(),
+                                    /* This logic assigns each card to the right column */
+                                    showWhen: or(mod(fv!index, local!numOfCols) = local!colIndex, and(mod(fv!index, local!numOfCols) = 0, local!colIndex = local!numOfCols)),
+                                    marginBelow: "LESS"
+                                  )
+                                )
+                              },
+                              width: "MEDIUM"
+                            )
+                          )
+                        ),
+                        marginAbove: "NONE",
+                        marginBelow: "NONE",
+                        spacing: "DENSE",
+                        stackWhen: {"TABLET_LANDSCAPE", "TABLET_PORTRAIT", "PHONE"}
+                      )
+                    },
+                    showWhen: local!numOfAttachments &gt; 0,
+                    divider: "ABOVE"
+                  )
+                }
+              )
+            },
+            padding: "MORE",
+            marginBelow: "STANDARD",
+            showBorder: false
+          )
+        },
+        padding: "EVEN_LESS",
+        showWhen: if(
+          #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+          local!showMessage,
+          true
+        )
+      )
+    }
+  ),
+  /* Navigation optimized for mobile and small screens */
+  #"SYSTEM_SYSRULES_headerContentLayout"(
+    header: {
+      #"SYSTEM_SYSRULES_cardLayout"(
+        contents: {
+          #"SYSTEM_SYSRULES_cardLayout"(
+            contents: {
+              /* Top navigation for tablet portrait */
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_forEach"(
+                    local!sideNavPages,
+                    #"SYSTEM_SYSRULES_columnLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_cardLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_richTextDisplayField"(
+                              value: {
+                                #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                  text: fv!item.name,
+                                  color: "STANDARD",
+                                  size: "SMALL",
+                                  style: if(
+                                    local!selectedPage = fv!index,
+                                    "STRONG",
+                                    "PLAIN"
+                                  )
+                                )
+                              },
+                              preventWrapping: true,
+                              align: "CENTER"
+                            )
+                          },
+                          /* Link to update selected page */
+                          link: #"SYSTEM_SYSRULES_dynamicLink"(),
+                          style: "#3B464E",
+                          padding: "LESS",
+                          showBorder: false,
+                          decorativeBarPosition: "BOTTOM",
+                          decorativeBarColor: if(
+                            local!selectedPage = fv!index,
+                            "#ffffff",
+                            "#3B464E"
+                          ),
+                          accessibilityText: if(
+                            local!selectedPage = fv!index,
+                            "Selected tab.",
+                            "Unselected tab. Press enter to select tab."
+                          )
+                        )
+                      },
+                      width: "NARROW"
+                    )
+                  )
+                },
+                showWhen: #"SYSTEM_SYSRULES_isPageWidth"("TABLET_PORTRAIT"),
+                marginBelow: "NONE",
+                spacing: "NONE"
+              ),
+              /* Top navigation for phone */
+              #"SYSTEM_SYSRULES_columnsLayout"(
+                columns: {
+                  #"SYSTEM_SYSRULES_forEach"(
+                    items: local!sideNavPages,
+                    expression: #"SYSTEM_SYSRULES_columnLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_stampField"(
+                          icon: fv!item.icon,
+                          backgroundColor: if(
+                            local!selectedPage = fv!index,
+                            "#ffffff",
+                            "#3B464E"
+                          ),
+                          contentColor: if(
+                            local!selectedPage = fv!index,
+                            "ACCENT",
+                            "STANDARD"
+                          ),
+                          /* Link to update selected page */
+                          link: #"SYSTEM_SYSRULES_dynamicLink"(),
+                          size: "SMALL",
+                          align: "CENTER",
+                          tooltip: fv!item.name,
+                          marginBelow: "NONE",
+                          accessibilityText: if(
+                            local!selectedPage = fv!index,
+                            "Selected tab.",
+                            "Unselected tab. Press enter to select tab."
+                          )
+                        ),
+                        #"SYSTEM_SYSRULES_richTextDisplayField"(
+                          labelPosition: "COLLAPSED",
+                          value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                            text: fv!item.name,
+                            size: "SMALL",
+                            style: if(
+                              local!selectedPage = fv!index,
+                              "STRONG",
+                              "PLAIN"
+                            )
+                          ),
+                          showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                          align: "CENTER"
+                        )
+                      }
+                    )
+                  )
+                },
+                showWhen: #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                spacing: if(#"SYSTEM_SYSRULES_isPageWidth"("PHONE"), "NONE", "SPARSE"),
+                stackWhen: "NEVER"
+              )
+            },
+            showWhen: #"SYSTEM_SYSRULES_isPageWidth"({"TABLET_PORTRAIT", "PHONE"}),
+            style: "#3B464E",
+            showBorder: false
+          ),
+          #"SYSTEM_SYSRULES_columnsLayout"(
+            columns: {
+              /* Side navigation column for other page widths */
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_forEach"(
+                        items: local!sideNavPages,
+                        expression: #"SYSTEM_SYSRULES_cardLayout"(
+                          contents: {
+                            #"SYSTEM_SYSRULES_sideBySideLayout"(
+                              items: {
+                                #"SYSTEM_SYSRULES_sideBySideItem"(
+                                  item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                        text: char(448),
+                                        color: if(
+                                          local!selectedPage = fv!index,
+                                          "STANDARD",
+                                          "#3B464E"
+                                        ),
+                                        size: "LARGE"
+                                      )
+                                    }
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                #"SYSTEM_SYSRULES_sideBySideItem"(
+                                  item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                        text: fv!item.name,
+                                        size: "MEDIUM",
+                                        style: if(
+                                          local!selectedPage = fv!index,
+                                          "STRONG",
+                                          "PLAIN"
+                                        )
+                                      )
+                                    }
+                                  )
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE"
+                            )
+                          },
+                          /* Link to update selected page */
+                          link: #"SYSTEM_SYSRULES_dynamicLink"(),
+                          style: "#3B464E",
+                          padding: "NONE",
+                          showBorder: false,
+                          accessibilityText: if(
+                            local!selectedPage = fv!index,
+                            "Selected tab.",
+                            "Unselected tab. Press enter to select tab."
+                          )
+                        )
+                      )
+                    },
+                    style: "#3B464E",
+                    showBorder: false
+                  ),
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    height: "EXTRA_TALL",
+                    showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                    style: "#3B464E",
+                    showBorder: false
+                  ),
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    height: "EXTRA_TALL",
+                    showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                    style: "#3B464E",
+                    showBorder: false
+                  ),
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    height: "EXTRA_SHORT",
+                    showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                    style: "#3B464E",
+                    showBorder: false
+                  )
+                },
+                width: "NARROW",
+                showWhen: not(#"SYSTEM_SYSRULES_isPageWidth"({"TABLET_PORTRAIT", "PHONE"}))
+              ),
+              /* Message list column */
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  /* Page name on phone */
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        labelPosition: "COLLAPSED",
+                        value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                          text: index(
+                            local!sideNavPages.name,
+                            local!selectedPage,
+                            {}
+                          ),
+                          size: "MEDIUM",
+                          style: "STRONG"
+                        )
+                      )
+                    },
+                    showWhen: #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                    showBorder: false
+                  ),
+                  /* Message cards */
+                  #"SYSTEM_SYSRULES_forEach"(
+                    items: local!messages,
+                    expression: #"SYSTEM_SYSRULES_cardLayout"(
+                      contents: {
+                        #"SYSTEM_SYSRULES_sideBySideLayout"(
+                          items: {
+                            #"SYSTEM_SYSRULES_sideBySideItem"(
+                              item: #"SYSTEM_SYSRULES_stampField"(
+                                labelPosition: "COLLAPSED",
+                                text: initials(fv!item.from),
+                                backgroundColor: fv!item.stampColor,
+                                contentColor: "STANDARD",
+                                size: "TINY"
+                              ),
+                              width: "MINIMIZE"
+                            ),
+                            #"SYSTEM_SYSRULES_sideBySideItem"(
+                              item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: fv!item.from,
+                                    style: if(
+                                      fv!item.isRead,
+                                      "PLAIN",
+                                      "STRONG"
+                                    )
+                                  ),
+                                  " ",
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: "to" &amp; " " &amp; fv!item.to,
+                                    color: "SECONDARY"
+                                  ),
+                                  char(10),
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: fv!item.subject,
+                                    color: "STANDARD",
+                                    style: if(
+                                      fv!item.isRead,
+                                      "PLAIN",
+                                      "STRONG"
+                                    )
+                                  )
+                                }
+                              )
+                            ),
+                            #"SYSTEM_SYSRULES_sideBySideItem"(
+                              item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                    text: fv!item.time,
+                                    color: if(
+                                      fv!item.isRead,
+                                      "SECONDARY",
+                                      "STANDARD"
+                                    ),
+                                    style: if(
+                                      fv!item.isRead,
+                                      "PLAIN",
+                                      "STRONG"
+                                    )
+                                  )
+                                }
+                              ),
+                              width: "MINIMIZE"
+                            )
+                          },
+                          alignVertical: "MIDDLE"
+                        )
+                      },
+                      /* Link to update selected message and mark message as read */
+                      link: #"SYSTEM_SYSRULES_dynamicLink"(
+                        saveInto: {
+                          if(
+                            #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                            a!save(local!showMessage, true),
+                            {}
+                          )
+                        }
+                      ),
+                      style: if(
+                        and(
+                          not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE")),
+                          local!selectedMessageIndex = fv!index
+                        ),
+                        "NONE",
+                        "#f0f0f0"
+                      ),
+                      padding: if(
+                        not(#"SYSTEM_SYSRULES_isPageWidth"("TABLET_LANDSCAPE")),
+                        "STANDARD",
+                        "LESS"
+                      ),
+                      showBorder: false
+                    )
+                  )
+                },
+                width: if(
+                  #"SYSTEM_SYSRULES_isPageWidth"({"DESKTOP_NARROW", "TABLET_LANDSCAPE", "TABLET_PORTRAIT"}),
+                  "NARROW_PLUS",
+                  "MEDIUM_PLUS"
+                ),
+                showWhen: if(
+                  #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                  not(local!showMessage),
+                  true
+                )
+              ),
+              /* Selected message column */
+              #"SYSTEM_SYSRULES_columnLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_cardLayout"(
+                    contents: {
+                      /* Back button to messages list on phone */
+                      #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            labelPosition: "COLLAPSED",
+                            value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                              text: {
+                                #"SYSTEM_SYSRULES_richTextIcon"(
+                                  icon: "chevron-left",
+                                  altText: "Back arrow"
+                                ),
+                                " ",
+                                "All messages"
+                              },
+                              link: #"SYSTEM_SYSRULES_dynamicLink"(value: false, saveInto: local!showMessage),
+                              linkStyle: "STANDALONE"
+                            )
+                          )
+                        },
+                        showWhen: #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                        divider: "BELOW"
+                      ),
+                      a!localVariables(
+                        local!selectedMessage: index(
+                          local!messages,
+                          local!selectedMessageIndex,
+                          {}
+                        ),
+                        local!selectedMessageAttachments: {
+                          a!map(id: 1, name: "Facility Fact Sheet.pdf", size: "178KB", type: "pdf")
+                        },
+                        local!numOfAttachments: length(local!selectedMessageAttachments),
+                        /* Number of columns for attachments */
+                        local!numOfCols: 2,
+                        {
+                          /* Selected message header */
+                          #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                            contents: {
+                              #"SYSTEM_SYSRULES_columnsLayout"(
+                                columns: {
+                                  #"SYSTEM_SYSRULES_columnLayout"(
+                                    contents: {
+                                      #"SYSTEM_SYSRULES_stampField"(
+                                        labelPosition: "COLLAPSED",
+                                        text: initials(local!selectedMessage.from),
+                                        backgroundColor: local!selectedMessage.stampColor,
+                                        contentColor: "STANDARD",
+                                        size: if(#"SYSTEM_SYSRULES_isPageWidth"("PHONE"), "TINY", "SMALL")
+                                      )
+                                    },
+                                    width: "EXTRA_NARROW"
+                                  ),
+                                  #"SYSTEM_SYSRULES_columnLayout"(
+                                    contents: {
+                                      #"SYSTEM_SYSRULES_sideBySideLayout"(
+                                        items: {
+                                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                                            item: #"SYSTEM_SYSRULES_stampField"(
+                                              labelPosition: "COLLAPSED",
+                                              text: initials(local!selectedMessage.from),
+                                              backgroundColor: local!selectedMessage.stampColor,
+                                              contentColor: "STANDARD",
+                                              size: if(
+                                                #"SYSTEM_SYSRULES_isPageWidth"({ "TABLET_PORTRAIT", "PHONE" }),
+                                                "TINY",
+                                                "SMALL"
+                                              )
+                                            ),
+                                            width: "MINIMIZE",
+                                            showWhen: false
+                                          ),
+                                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                              labelPosition: "COLLAPSED",
+                                              value: {
+                                                local!selectedMessage.from,
+                                                " ",
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: "to me" &amp; ", ", color: "SECONDARY"),
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: "Rita Ramos", color: "ACCENT"),
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: ", " &amp; "and" &amp; " ", color: "SECONDARY"),
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(text: "Jorge Pena", color: "ACCENT")
+                                              },
+                                              preventWrapping: true
+                                            )
+                                          ),
+                                          #"SYSTEM_SYSRULES_sideBySideItem"(
+                                            item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                              labelPosition: "COLLAPSED",
+                                              value: {
+                                                #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                                  text: local!selectedMessage.time,
+                                                  color: "SECONDARY",
+                                                  size: if(
+                                                    #"SYSTEM_SYSRULES_isPageWidth"({ "TABLET_PORTRAIT", "PHONE" }),
+                                                    "SMALL",
+                                                    "STANDARD"
+                                                  )
+                                                )
+                                              },
+                                              align: "RIGHT"
+                                            ),
+                                            width: "MINIMIZE"
+                                          )
+                                        },
+                                        alignVertical: "MIDDLE",
+                                        marginBelow: "NONE"
+                                      ),
+                                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                        labelPosition: "COLLAPSED",
+                                        value: #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                          text: local!selectedMessage.subject,
+                                          size: if(
+                                            #"SYSTEM_SYSRULES_isPageWidth"({"TABLET_LANDSCAPE", "TABLET_PORTRAIT", "PHONE"}),
+                                            "MEDIUM",
+                                            "MEDIUM_PLUS"
+                                          )
+                                        ),
+                                        preventWrapping: true
+                                      )
+                                    },
+                                    width: if(
+                                      #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                                      "MEDIUM_PLUS",
+                                      "AUTO"
+                                    )
+                                  )
+                                },
+                                alignVertical: "MIDDLE",
+                                stackWhen: "NEVER"
+                              )
+                            },
+                            divider: "BELOW"
+                          ),
+                          /* Selected message text */
+                          #"SYSTEM_SYSRULES_richTextDisplayField"(
+                            labelPosition: "COLLAPSED",
+                            value: {local!selectedMessage.message}
+                          ),
+                          /* Selected message attachments */
+                          #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                            contents: {
+                              #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                labelPosition: "COLLAPSED",
+                                value: local!numOfAttachments &amp; " " &amp; if(local!numOfAttachments &gt; 1, "Attachments", "Attachment")
+                              ),
+                              #"SYSTEM_SYSRULES_columnsLayout"(
+                                columns: #"SYSTEM_SYSRULES_forEach"(
+                                  items: enumerate(local!numOfCols) + 1,
+                                  expression: a!localVariables(
+                                    local!colIndex: fv!index,
+                                    #"SYSTEM_SYSRULES_columnLayout"(
+                                      contents: {
+                                        #"SYSTEM_SYSRULES_forEach"(
+                                          items: local!selectedMessageAttachments,
+                                          expression: #"SYSTEM_SYSRULES_cardLayout"(
+                                            contents: {
+                                              #"SYSTEM_SYSRULES_sideBySideLayout"(
+                                                items: {
+                                                  #"SYSTEM_SYSRULES_sideBySideItem"(
+                                                    item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                                      labelPosition: "COLLAPSED",
+                                                      value: {
+                                                        #"SYSTEM_SYSRULES_richTextIcon"(
+                                                          icon: "file-" &amp; fv!item.type &amp; "-o",
+                                                          altText: fv!item.type,
+                                                          color: "ACCENT",
+                                                          size: "LARGE"
+                                                        )
+                                                      }
+                                                    ),
+                                                    width: "MINIMIZE"
+                                                  ),
+                                                  #"SYSTEM_SYSRULES_sideBySideItem"(
+                                                    item: #"SYSTEM_SYSRULES_richTextDisplayField"(
+                                                      labelPosition: "COLLAPSED",
+                                                      value: {
+                                                        #"SYSTEM_SYSRULES_richTextItem_v1"(
+                                                          text: fv!item.name,
+                                                          style: "STRONG"
+                                                        ),
+                                                        char(10),
+                                                        #"SYSTEM_SYSRULES_richTextItem_v1"(text: fv!item.size, color: "SECONDARY")
+                                                      }
+                                                    )
+                                                  )
+                                                },
+                                                alignVertical: "MIDDLE"
+                                              )
+                                            },
+                                            link: #"SYSTEM_SYSRULES_dynamicLink"(),
+                                            /* This logic assigns each card to the right column */
+                                            showWhen: or(mod(fv!index, local!numOfCols) = local!colIndex, and(mod(fv!index, local!numOfCols) = 0, local!colIndex = local!numOfCols)),
+                                            marginBelow: "LESS"
+                                          )
+                                        )
+                                      },
+                                      width: "MEDIUM"
+                                    )
+                                  )
+                                ),
+                                marginAbove: "NONE",
+                                marginBelow: "NONE",
+                                spacing: "DENSE",
+                                stackWhen: {"TABLET_LANDSCAPE", "TABLET_PORTRAIT", "PHONE"}
+                              )
+                            },
+                            showWhen: local!numOfAttachments &gt; 0,
+                            divider: "ABOVE"
+                          )
+                        }
+                      )
+                    },
+                    padding: "MORE",
+                    marginBelow: "STANDARD",
+                    showBorder: false
+                  )
+                },
+                showWhen: if(
+                  #"SYSTEM_SYSRULES_isPageWidth"("PHONE"),
+                  local!showMessage,
+                  true
+                )
+              )
+            },
+            alignVertical: "TOP",
+            spacing: "NONE",
+            showDividers: not(#"SYSTEM_SYSRULES_isPageWidth"("PHONE"))
+          )
+        },
+        style: "#fff",
+        padding: "NONE",
+        showBorder: false
+      )
+    },
+    backgroundColor: "WHITE"
+  )
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_7849"/>
+        <historyInfo versionUuid="_a-0000eb7e-2cc3-8000-9ba4-011c48011c48_8564"/>
+        <historyInfo versionUuid="_a-0000eba5-7372-8000-9ba4-011c48011c48_8014"/>
+    </history>
+</contentHaul>

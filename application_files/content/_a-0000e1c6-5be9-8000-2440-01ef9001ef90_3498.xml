@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1c7-c8d7-8000-a069-01ef9001ef90_21292</versionUuid>
+    <rule>
+        <name>AUT_SuggestFunctionWithPartialInput</name>
+        <uuid>_a-0000e1c6-5be9-8000-2440-01ef9001ef90_3498</uuid>
+        <description>This suggestion function displays suggestions that only partially contain the input to test scenarios where the inputted text doesn't exactly match the desired suggestion
+
+</description>
+        <parentUuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2449</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!rawData: enumerate(50) + 1,
+  local!searchInput: #"SYSTEM_SYSRULES_forEach"(
+    local!rawData,
+    if(
+      search(ri!input, fv!item),
+      concat(fv!item, "-", "concatenated description"),
+      null
+    )
+  ),
+  local!suggestionMatch: remove(
+    local!searchInput,
+    wherecontains(null,local!searchInput)
+  ),
+  local!input: tointeger(ri!input),
+  #"SYSTEM_SYSRULES_dataSubset"(
+    startIndex: 1,
+    batchSize: length(local!suggestionMatch),
+    totalCount: length(local!suggestionMatch),
+    data: local!suggestionMatch,
+    identifiers: #"SYSTEM_SYSRULES_forEach"(
+      local!suggestionMatch,
+      left(fv!item, search("-", fv!item)-1)
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>input</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name>Test 1</a:name>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">1</a:value>
+                    <a:nameRef>input</a:nameRef>
+                    <a:id>1</a:id>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+            <el>
+                <a:name>Test 2</a:name>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">2</a:value>
+                    <a:nameRef>input</a:nameRef>
+                    <a:id>1</a:id>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="_a-0000e1c7-c8d7-8000-a069-01ef9001ef90_21292"/>
+    </history>
+</contentHaul>

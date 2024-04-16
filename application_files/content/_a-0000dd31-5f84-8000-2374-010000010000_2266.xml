@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e60f-f2c5-8000-cc8b-01ef9001ef90_31627</versionUuid>
+    <interface>
+        <name>AUT_EdgeCasesSection</name>
+        <uuid>_a-0000dd31-5f84-8000-2374-010000010000_2266</uuid>
+        <description></description>
+        <parentUuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49587</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!blankField,
+  local!textField2,
+  local!textField3,
+  local!fileUploadField2,
+  local!radioOptionLost,
+  local!radioOptionCardsStyle,
+  local!checkboxOptionLost,
+  local!checkboxOptionShort,
+  local!checkboxOptionIndex,
+  local!apostropheField,
+  local!fieldMatchingTitle,
+  local!customPicker,
+  local!longDropdownChoices: #"SYSTEM_SYSRULES_forEach"(
+    items: enumerate(150) + 1,
+    expression: fn!concat("Option ", fv!item)
+  ),
+  local!longDropdownValue,
+  local!multipleLongDropdownValue,
+  local!noPlaceholderDropdownValue: "Option 5",
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Edge Cases",
+    firstColumnContents: {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "",
+        labelPosition: "ABOVE",
+        value: local!blankField,
+        saveInto: local!blankField,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_radioButtonField"(
+        label: "",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Click Me!",
+          "Don't Click Me!"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!radioOptionLost,
+        saveInto: local!radioOptionLost,
+        choiceLayout: "STACKED",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_radioButtonField"(
+        label: "",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "cards style choice!"
+        },
+        choiceValues: {
+          1
+        },
+        value: local!radioOptionCardsStyle,
+        saveInto: local!radioOptionCardsStyle,
+        choiceLayout: "STACKED",
+        validations: {},
+        choiceStyle: "CARDS"
+      ),
+      #"SYSTEM_SYSRULES_checkboxField"(
+        label: "",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Click Me Too!",
+          "Don't Click Me Either!"
+        },
+        choiceValues: {
+          1,
+          2
+        },
+        value: local!checkboxOptionLost,
+        saveInto: local!checkboxOptionLost,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_pickerFieldCustom"(
+        label: "All Fields",
+        instructions: "Picker with same name as form and a text field",
+        labelPosition: "ABOVE",
+        suggestFunction: #"_a-0000dbe2-3890-8000-9ba2-011c48011c48_50056",
+        selectedLabels: local!customPicker,
+        value: local!customPicker,
+        saveInto: local!customPicker,
+        validations: {}
+      ),
+			#"SYSTEM_SYSRULES_textField"(
+        label: "All Fields",
+        instructions: "Text field with same name as form and a picker field",
+        value: local!fieldMatchingTitle,
+        saveInto: local!fieldMatchingTitle
+      )
+    },
+    secondColumnContents: {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "TextField",
+        labelPosition: "ABOVE",
+        value: local!textField2,
+        saveInto: local!textField2,
+        refreshAfter: "UNFOCUS",
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_fileUploadField_v1"(
+        label: "FileUploadFieldIndex",
+        labelPosition: "ABOVE",
+        target: #"_a-0001dbef-826b-8000-9ba2-011c48011c48_56540",
+        value: local!fileUploadField2,
+        saveInto: local!fileUploadField2,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_checkboxField"(
+        label: "CheckboxFieldIndex",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "Click Me With Index"
+        },
+        choiceValues: {
+          1
+        },
+        value: local!checkboxOptionIndex,
+        saveInto: local!checkboxOptionIndex,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_checkboxField"(
+        label: "CheckboxeswithShortLabels",
+        labelPosition: "ABOVE",
+        choiceLabels: {
+          "longerName",
+          "z",
+          "st"
+        },
+        choiceValues: {
+          1,
+          2,
+          3
+        },
+        value: local!checkboxOptionShort,
+        saveInto: local!checkboxOptionShort,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Field'With'Apostrophe",
+        value: local!apostropheField,
+        saveInto: local!apostropheField,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_dropdownField"(
+        label: "Long DropdownField",
+        choiceLabels: local!longDropdownChoices,
+        choiceValues: local!longDropdownChoices,
+        saveInto: local!longDropdownValue,
+        value: local!longDropdownValue,
+        placeholderLabel: "Select a value"
+      ),
+      #"SYSTEM_SYSRULES_multipleDropdownField"(
+        label: "Long MultipleDropdownField",
+        choiceLabels: local!longDropdownChoices,
+        choiceValues: local!longDropdownChoices,
+        saveInto: local!multipleLongDropdownValue,
+        value: local!multipleLongDropdownValue
+      ),
+      #"SYSTEM_SYSRULES_dropdownField"(
+        label: "No Placeholder DropdownField",
+        choiceLabels: local!longDropdownChoices,
+        choiceValues: local!longDropdownChoices,
+        saveInto: local!noPlaceholderDropdownValue,
+        value: local!noPlaceholderDropdownValue
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47556"/>
+        <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491099"/>
+        <historyInfo versionUuid="_a-0000e011-b8fd-8000-c083-01ef9001ef90_23253"/>
+        <historyInfo versionUuid="_a-0000e350-4459-8000-3634-01ef9001ef90_27813"/>
+        <historyInfo versionUuid="_a-0000e39a-789a-8000-7555-31ef9031ef90_8449"/>
+        <historyInfo versionUuid="_a-0000e3b8-23e4-8000-204e-aaef90aaef90_31109"/>
+        <historyInfo versionUuid="_a-0000e60f-f2c5-8000-cc8b-01ef9001ef90_31627"/>
+    </history>
+</contentHaul>
