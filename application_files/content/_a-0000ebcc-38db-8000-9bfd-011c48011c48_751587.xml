@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751598</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751737</versionUuid>
     <rule>
         <name>AUT_Test1</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751587</uuid>
@@ -15,7 +15,8 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>"Test 1"</definition>
+        <definition>"Test 1"
+"jd"</definition>
         <preferredEditor>legacy</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
     </rule>
@@ -47,5 +48,6 @@
     </roleMap>
     <history>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751598"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751737"/>
     </history>
 </contentHaul>
