@@ -1,0 +1,1 @@
+INSERT INTO `auttestdata` (`testid`, `testtext`, `testint`, `testdecimal`, `testdatetime`) VALUES (NULL, 'HkJI', '12', '1.1', '2024-04-24 14:56:00.000000')
