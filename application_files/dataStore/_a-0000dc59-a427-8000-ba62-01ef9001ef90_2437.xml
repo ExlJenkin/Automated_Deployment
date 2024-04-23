@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751967</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752624</versionUuid>
     <dataStore>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2437</uuid>
         <name>AUT DS</name>
@@ -105,5 +105,6 @@
         <historyInfo versionUuid="_a-0000eb88-04ce-8000-9ba6-011c48011c48_12729"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751577"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751967"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752624"/>
     </history>
 </dataStoreHaul>

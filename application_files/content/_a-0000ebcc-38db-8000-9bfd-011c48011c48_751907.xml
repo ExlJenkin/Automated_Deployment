@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752413</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752560</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -17,7 +17,7 @@
         </visibility>
         <definition>if(
   or(a!isNullOrEmpty(ri!price),a!isNullOrEmpty(ri!quantity)),
-  "",
+  " ",
   fn!product(ri!price, ri!quantity)
 )</definition>
         <namedTypedValue>
@@ -157,5 +157,6 @@
     </typedValue>
     <history>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752413"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752560"/>
     </history>
 </contentHaul>
