@@ -1,1 +1,1 @@
-INSERT INTO `auttestdata` (`testid`, `testtext`, `testint`, `testdecimal`, `testdatetime`) VALUES (NULL, 'lwOaNK', '7', '1.1', '2024-04-24 14:56:00.000000')
+ALTER TABLE `auttestdata` ADD `testfinalprice` VARCHAR(255) NULL AFTER `testdatetime`;
