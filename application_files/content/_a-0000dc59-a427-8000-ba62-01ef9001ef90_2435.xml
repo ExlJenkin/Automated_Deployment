@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000df61-c0d1-8000-9ba2-011c48011c48_491084</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752011</versionUuid>
     <interface>
         <name>AUT_TestDataInput</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2435</uuid>
@@ -15,7 +15,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=load(
+        <definition>a!localVariables(
   local!testData: if(
     isnull(ri!testID),
     null,
@@ -40,7 +40,17 @@
         labelPosition: "ABOVE",
         instructions: "Integer Field",
         value: local!testData.testInt,
-        saveInto: local!testData.testInt,
+        saveInto: {
+          local!testData.testInt,
+          a!save(
+            local!testData.testFinalPrice,
+            #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
+              local!testData.testDecimal,
+              local!testData.testInt
+            ),
+            
+          )
+        },
         refreshAfter: "UNFOCUS",
         required: true,
         validations: {}
@@ -50,9 +60,36 @@
         labelPosition: "ABOVE",
         instructions: "Decimal Field",
         value: local!testData.testDecimal,
-        saveInto: local!testData.testDecimal,
+        saveInto: {
+          local!testData.testDecimal,
+          a!save(
+            local!testData.testFinalPrice,
+            #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
+              local!testData.testDecimal,
+              local!testData.testInt
+            ),
+            
+          )
+        },
         refreshAfter: "UNFOCUS",
         required: true,
+        validations: {}
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Final Price",
+        labelPosition: "ABOVE",
+        instructions: "Text Field",
+        value: if(
+          a!isNullOrEmpty(local!testData.testFinalPrice),
+          #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
+            local!testData.testDecimal,
+            local!testData.testInt
+          ),
+          local!testData.testFinalPrice
+        ),
+        saveInto: local!testData.testFinalPrice,
+        readOnly: not(#"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751999"),
+        refreshAfter: "UNFOCUS",
         validations: {}
       ),
       #"SYSTEM_SYSRULES_dateTimeField"(
@@ -67,6 +104,7 @@
     },
     secondColumnContents: {
       /* Add components here for a two-column form */
+      
     },
     buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
       primaryButtons: {
@@ -145,5 +183,6 @@
     <history>
         <historyInfo versionUuid="_a-0000dfc6-5890-8000-2af0-01ef9001ef90_47478"/>
         <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491084"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752011"/>
     </history>
 </contentHaul>
