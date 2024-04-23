@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752560</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752676</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -148,7 +148,7 @@
                     <a:expectedOutput>
                         <a:type a:uuid="{http://www.appian.com/ae/types/2009}Variant"/>
                         <a:runtimeType a:uuid="{http://www.appian.com/ae/types/2009}Variant"/>
-                        <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">""</a:value>
+                        <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">" "</a:value>
                     </a:expectedOutput>
                 </a:assertions>
                 <a:isDefault>false</a:isDefault>
@@ -158,5 +158,6 @@
     <history>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752413"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752560"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752676"/>
     </history>
 </contentHaul>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752575</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752696</versionUuid>
     <interface>
         <name>AUT_TestDataInputRecord</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2439</uuid>
@@ -33,6 +33,7 @@
       labelPosition: "ADJACENT",
       value: and(
         ri!testData.testDateTime &gt; now(),
+        
         
         ri!testData.testDateTime &lt; datetime(2090, 12, 31)
       ),
@@ -123,5 +124,6 @@
         <historyInfo versionUuid="_a-0000df61-c0d1-8000-9ba2-011c48011c48_491085"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751985"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752575"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752696"/>
     </history>
 </contentHaul>
