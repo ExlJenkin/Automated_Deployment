@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754221</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754421</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -20,7 +20,7 @@
   "",
   fn!product(ri!cost, ri!quantities)
 )
-/*hello we have a new version*/</definition>
+/*hello we have a new versions*/</definition>
         <namedTypedValue>
             <name>cost</name>
             <type>
@@ -164,5 +164,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754053"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754171"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754221"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754421"/>
     </history>
 </contentHaul>
