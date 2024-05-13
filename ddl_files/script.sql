@@ -1,1 +1,1 @@
-ALTER TABLE `auttestdata` ADD `testfinalprice` VARCHAR(255) NULL AFTER `testdatetime`;
+ALTER TABLE `auttestdata` ADD `testfinalcost` VARCHAR(255) NULL AFTER `testdatetime`;
