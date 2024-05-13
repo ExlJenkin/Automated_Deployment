@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754171</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754221</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -16,13 +16,13 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>if(
-  or(a!isNullOrEmpty(ri!price),a!isNullOrEmpty(ri!quantities)),
+  or(a!isNullOrEmpty(ri!cost),a!isNullOrEmpty(ri!quantities)),
   "",
-  fn!product(ri!price, ri!quantities)
+  fn!product(ri!cost, ri!quantities)
 )
 /*hello we have a new version*/</definition>
         <namedTypedValue>
-            <name>price</name>
+            <name>cost</name>
             <type>
                 <name>double</name>
                 <namespace>http://www.w3.org/2001/XMLSchema</namespace>
@@ -74,7 +74,7 @@
                 <a:name>BothGreaterThanZero</a:name>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">23.98</a:value>
-                    <a:nameRef>price</a:nameRef>
+                    <a:nameRef>cost</a:nameRef>
                     <a:id>1</a:id>
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
@@ -95,7 +95,7 @@
                 <a:name>priceIsZero</a:name>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">0</a:value>
-                    <a:nameRef>price</a:nameRef>
+                    <a:nameRef>cost</a:nameRef>
                     <a:id>1</a:id>
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
@@ -116,7 +116,7 @@
                 <a:name>quantityIsZero</a:name>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">76.99</a:value>
-                    <a:nameRef>price</a:nameRef>
+                    <a:nameRef>cost</a:nameRef>
                     <a:id>1</a:id>
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
@@ -137,7 +137,7 @@
                 <a:name>bothValuesAreNull</a:name>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:double"/>
-                    <a:nameRef>price</a:nameRef>
+                    <a:nameRef>cost</a:nameRef>
                     <a:id>1</a:id>
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
@@ -163,5 +163,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753750"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754053"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754171"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754221"/>
     </history>
 </contentHaul>

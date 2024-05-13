@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754023</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754278</versionUuid>
     <interface>
         <name>AUT_TestDataInputRecord</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2439</uuid>
@@ -63,7 +63,7 @@
     #"SYSTEM_SYSRULES_textField"(
       label: "Final Price",
       labelPosition: "ADJACENT",
-      value: ri!testData.testFinalPrice,
+      value: ri!testData.testFinalCost,
       readonly: true,
       validations: {}
     ),
@@ -126,5 +126,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752696"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753774"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754023"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754278"/>
     </history>
 </contentHaul>
