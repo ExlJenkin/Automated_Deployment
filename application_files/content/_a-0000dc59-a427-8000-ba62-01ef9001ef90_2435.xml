@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752705</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_753785</versionUuid>
     <interface>
         <name>AUT_TestDataInput</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2435</uuid>
@@ -22,10 +22,9 @@
     #"_a-0000dc59-a427-8000-ba62-01ef9001ef90_2445"(ri!testID)
   ),
   
-  
   #"SYSTEM_SYSRULES_formLayout"(
     label: "Automated Testing Data Input",
-    instructions: "Fill out this form to create a new record",
+    instructions: "Fill out this form to create a new records",
     firstColumnContents: {
       #"SYSTEM_SYSRULES_textField"(
         label: "Title",
@@ -188,5 +187,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752011"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752568"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752705"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753785"/>
     </history>
 </contentHaul>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752727</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_753807</versionUuid>
     <dataStore>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2437</uuid>
         <name>AUT DS</name>
@@ -13,6 +13,21 @@
                 <uuid>74a2f58d-a860-4446-9e88-73d6d983f9d0</uuid>
                 <name>testData</name>
                 <type>{urn:com:appian:types}AUT_TestData</type>
+            </entity>
+            <entity>
+                <uuid>40008f03-efa8-4e9d-8d21-9f65f30052d9</uuid>
+                <name>AUT_Test_Case_Result_XML_Data</name>
+                <type>{urn:com:appian:types}AUT_Test_Case_Result_XML_Data</type>
+            </entity>
+            <entity>
+                <uuid>868abf08-e7c3-4643-bb5f-c752428bb3e4</uuid>
+                <name>AUT_Deployment_Build_Details</name>
+                <type>{urn:com:appian:types}AUT_Deployment_Build_Details</type>
+            </entity>
+            <entity>
+                <uuid>73c06a1e-e7a3-4e77-a76f-4f609ab27276</uuid>
+                <name>AUT_Fitnesse_XML_Data</name>
+                <type>{urn:com:appian:types}AUT_Fitnesse_XML_Data</type>
             </entity>
         </entities>
     </dataStore>
@@ -107,5 +122,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751967"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752624"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752727"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753807"/>
     </history>
 </dataStoreHaul>

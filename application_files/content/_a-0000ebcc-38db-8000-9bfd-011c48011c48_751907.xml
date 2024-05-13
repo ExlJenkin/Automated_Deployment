@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_752676</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_753750</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -17,9 +17,10 @@
         </visibility>
         <definition>if(
   or(a!isNullOrEmpty(ri!price),a!isNullOrEmpty(ri!quantity)),
-  " ",
+  "",
   fn!product(ri!price, ri!quantity)
-)</definition>
+)
+/*hello*/</definition>
         <namedTypedValue>
             <name>price</name>
             <type>
@@ -148,7 +149,7 @@
                     <a:expectedOutput>
                         <a:type a:uuid="{http://www.appian.com/ae/types/2009}Variant"/>
                         <a:runtimeType a:uuid="{http://www.appian.com/ae/types/2009}Variant"/>
-                        <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">" "</a:value>
+                        <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">""</a:value>
                     </a:expectedOutput>
                 </a:assertions>
                 <a:isDefault>false</a:isDefault>
@@ -159,5 +160,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752413"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752560"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752676"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753750"/>
     </history>
 </contentHaul>
