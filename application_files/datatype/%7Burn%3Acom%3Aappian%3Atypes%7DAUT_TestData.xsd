@@ -5,7 +5,7 @@
     <xsd:annotation>
       <xsd:appinfo source="http://www.appian.com/ae/types/2009">
         <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
-          <ns2:versionUuid>0000ebfe-f121-8000-192e-7f0000014e7a</ns2:versionUuid>
+          <ns2:versionUuid>0000ebfe-f316-8000-1933-7f0000014e7a</ns2:versionUuid>
           <ns2:history>
             <ns2:historyInfo versionUuid="0060e09a-3a2c-8000-0def-014d98014d98"/>
             <ns2:historyInfo versionUuid="0000ebdd-8f32-8000-18b7-7f0000014e7a"/>
@@ -16,10 +16,11 @@
             <ns2:historyInfo versionUuid="0000ebfe-e3e1-8000-1924-7f0000014e7a"/>
             <ns2:historyInfo versionUuid="0000ebfe-ec58-8000-1929-7f0000014e7a"/>
             <ns2:historyInfo versionUuid="0000ebfe-f121-8000-192e-7f0000014e7a"/>
+            <ns2:historyInfo versionUuid="0000ebfe-f316-8000-1933-7f0000014e7a"/>
           </ns2:history>
         </ns2:Metadata>
       </xsd:appinfo>
-      <xsd:documentation><![CDATA[Test Data Type to be used for Record]]></xsd:documentation>
+      <xsd:documentation><![CDATA[AUT Test Data Type to be used for Record]]></xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="testFinalCost" nillable="true" type="xsd:string"/>

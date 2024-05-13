@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <processModelHaul>
-  <versionUuid>0001ebfe-f185-8000-1930-7f0000014e7a</versionUuid>
+  <versionUuid>0001ebfe-f34e-8000-1935-7f0000014e7a</versionUuid>
   <folderUuid>_g-0000dc59-c9a6-8000-ba62-014d98014d98_2</folderUuid>
   <roleMap>
     <role name="ADMIN_OWNER">
@@ -51,7 +51,7 @@
           <string-map>
             <pair>
               <locale country="US" lang="en" variant=""/>
-              <value><![CDATA[Input CDT data into the data store and create a news event]]></value>
+              <value><![CDATA[Input CDT data into the data store]]></value>
             </pair>
           </string-map>
         </desc>
@@ -1336,5 +1336,6 @@
     <historyInfo versionUuid="0001ebfe-e461-8000-1926-7f0000014e7a"/>
     <historyInfo versionUuid="0001ebfe-eccf-8000-192b-7f0000014e7a"/>
     <historyInfo versionUuid="0001ebfe-f185-8000-1930-7f0000014e7a"/>
+    <historyInfo versionUuid="0001ebfe-f34e-8000-1935-7f0000014e7a"/>
   </history>
 </processModelHaul>
