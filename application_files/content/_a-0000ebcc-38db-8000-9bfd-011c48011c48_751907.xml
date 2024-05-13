@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754053</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754171</versionUuid>
     <rule>
         <name>AUT_FinalPriceCalculation</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907</uuid>
@@ -16,9 +16,9 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>if(
-  or(a!isNullOrEmpty(ri!price),a!isNullOrEmpty(ri!quantity)),
+  or(a!isNullOrEmpty(ri!price),a!isNullOrEmpty(ri!quantities)),
   "",
-  fn!product(ri!price, ri!quantity)
+  fn!product(ri!price, ri!quantities)
 )
 /*hello we have a new version*/</definition>
         <namedTypedValue>
@@ -29,7 +29,7 @@
             </type>
         </namedTypedValue>
         <namedTypedValue>
-            <name>quantity</name>
+            <name>quantities</name>
             <type>
                 <name>int</name>
                 <namespace>http://www.w3.org/2001/XMLSchema</namespace>
@@ -79,7 +79,7 @@
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">3</a:value>
-                    <a:nameRef>quantity</a:nameRef>
+                    <a:nameRef>quantities</a:nameRef>
                     <a:id>2</a:id>
                 </a:ruleInputTestConfigs>
                 <a:assertions>
@@ -100,7 +100,7 @@
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">7</a:value>
-                    <a:nameRef>quantity</a:nameRef>
+                    <a:nameRef>quantities</a:nameRef>
                     <a:id>2</a:id>
                 </a:ruleInputTestConfigs>
                 <a:assertions>
@@ -121,7 +121,7 @@
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">0</a:value>
-                    <a:nameRef>quantity</a:nameRef>
+                    <a:nameRef>quantities</a:nameRef>
                     <a:id>2</a:id>
                 </a:ruleInputTestConfigs>
                 <a:assertions>
@@ -142,7 +142,7 @@
                 </a:ruleInputTestConfigs>
                 <a:ruleInputTestConfigs>
                     <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:int"/>
-                    <a:nameRef>quantity</a:nameRef>
+                    <a:nameRef>quantities</a:nameRef>
                     <a:id>2</a:id>
                 </a:ruleInputTestConfigs>
                 <a:assertions>
@@ -162,5 +162,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_752676"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_753750"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754053"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754171"/>
     </history>
 </contentHaul>
