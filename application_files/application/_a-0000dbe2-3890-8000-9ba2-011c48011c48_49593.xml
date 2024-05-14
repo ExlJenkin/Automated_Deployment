@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>edd5efea-3a6c-4fb7-8dbd-bf8dfa465ca8</versionUuid>
+    <versionUuid>0c4de2c4-6a7c-4650-beaf-4fe5e0f0c25a</versionUuid>
     <application>
         <name>Automated Testing</name>
         <uuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49593</uuid>
@@ -24,6 +24,9 @@
                     <type>datatype</type>
                     <uuids>
                         <uuid>{urn:com:appian:types}AUT_TestData</uuid>
+                        <uuid>{urn:com:appian:types}AUT_Deployment_Build_Details</uuid>
+                        <uuid>{urn:com:appian:types}AUT_Fitnesse_XML_Data</uuid>
+                        <uuid>{urn:com:appian:types}AUT_Test_Case_Result_XML_Data</uuid>
                     </uuids>
                 </item>
                 <item>
@@ -520,6 +523,7 @@
         <historyInfo versionUuid="fe195916-7d2e-44af-8b1c-dee33bd3b66f"/>
         <historyInfo versionUuid="529fe411-16e9-4f77-bc97-22507e1c194d"/>
         <historyInfo versionUuid="edd5efea-3a6c-4fb7-8dbd-bf8dfa465ca8"/>
+        <historyInfo versionUuid="0c4de2c4-6a7c-4650-beaf-4fe5e0f0c25a"/>
     </history>
     <postDeploymentProcessData/>
-</applicationHaul><!--updated on 2024-05-13T15:23:54.985-->
+</applicationHaul><!--updated on 2024-05-14T09:59:35.235-->
