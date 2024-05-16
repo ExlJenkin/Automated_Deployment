@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_755173</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_755337</versionUuid>
     <interface>
         <name>AUT_TestDataInputRecord</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2439</uuid>
@@ -19,7 +19,7 @@
   label: "Automated Test Data",
   firstColumnContents: {
     /*a!textField(
-      label: "Pasts we have a new version3",
+      label: "Pasts we have a new version4",
       labelPosition: "ADJACENT",
       value: and(
         ri!testData.testDateTime &gt; datetime(1900, 1, 1),
@@ -133,5 +133,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754791"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_755051"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_755173"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_755337"/>
     </history>
 </contentHaul>
