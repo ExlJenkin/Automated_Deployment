@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_754996</versionUuid>
+    <versionUuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_755155</versionUuid>
     <interface>
         <name>AUT_TestDataInput</name>
         <uuid>_a-0000dc59-a427-8000-ba62-01ef9001ef90_2435</uuid>
@@ -44,7 +44,7 @@
         saveInto: {
           local!testData.testInt,
           a!save(
-            local!testData.testFinalPrice,
+            local!testData.testFinalCost,
             #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
               local!testData.testDecimal,
               local!testData.testInt
@@ -64,7 +64,7 @@
         saveInto: {
           local!testData.testDecimal,
           a!save(
-            local!testData.testFinalPrice,
+            local!testData.testFinalCost,
             #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
               local!testData.testDecimal,
               local!testData.testInt
@@ -81,14 +81,14 @@
         labelPosition: "ABOVE",
         instructions: "Text Field",
         value: if(
-          a!isNullOrEmpty(local!testData.testFinalPrice),
+          a!isNullOrEmpty(local!testData.testFinalCost),
           #"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751907"(
             local!testData.testDecimal,
             local!testData.testInt
           ),
-          local!testData.testFinalPrice
+          local!testData.testFinalCost
         ),
-        saveInto: local!testData.testFinalPrice,
+        saveInto: local!testData.testFinalCost,
         readOnly: not(#"_a-0000ebcc-38db-8000-9bfd-011c48011c48_751999"),
         refreshAfter: "UNFOCUS",
         validations: {}
@@ -195,5 +195,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754693"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754845"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_754996"/>
+        <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_755155"/>
     </history>
 </contentHaul>
