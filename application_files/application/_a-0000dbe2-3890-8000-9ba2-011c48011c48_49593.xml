@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>e2215461-9a6b-4f8c-a72e-140c7f4b0e1d</versionUuid>
+    <versionUuid>58b31085-92f0-4a57-aa17-37a57f1e25a0</versionUuid>
     <application>
         <name>Automated Testing</name>
         <uuid>_a-0000dbe2-3890-8000-9ba2-011c48011c48_49593</uuid>
@@ -528,6 +528,7 @@
         <historyInfo versionUuid="e2982997-2ab7-4f33-ab31-2e8e0a27899a"/>
         <historyInfo versionUuid="901832c6-0659-4e98-b484-94605dd920e9"/>
         <historyInfo versionUuid="e2215461-9a6b-4f8c-a72e-140c7f4b0e1d"/>
+        <historyInfo versionUuid="58b31085-92f0-4a57-aa17-37a57f1e25a0"/>
     </history>
     <postDeploymentProcessData/>
-</applicationHaul><!--updated on 2024-06-20T12:24:52.546-->
+</applicationHaul><!--updated on 2024-07-09T15:08:55.755-->

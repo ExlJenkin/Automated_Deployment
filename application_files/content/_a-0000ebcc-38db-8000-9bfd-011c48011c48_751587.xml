@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000ec20-447b-8000-9c00-011c48011c48_758046</versionUuid>
+    <versionUuid>_a-0000ec20-447b-8000-9c00-011c48011c48_758436</versionUuid>
     <rule>
         <name>AUT_Test1</name>
         <uuid>_a-0000ebcc-38db-8000-9bfd-011c48011c48_751587</uuid>
@@ -19,7 +19,30 @@
 "Test 2"
 "Test 3"
 "Test 4"
-"Test 5"</definition>
+"Test 5"
+"Test 6"
+/*@echo off*/
+/**/
+/*SET RemoteMyApp="C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\My-App\builds"*/
+/*SET newestMyApp=""*/
+/**/
+/*for /f %%a in ('dir %RemoteMyApp% /b /od') do (if NOT %%a=="latest" SET newestMyApp=%%a)*/
+/**/
+/*copy "C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\My-App\builds\%newestMyApp%\build.xml" "C:\Users\Navneet177863\Documents\Jenkins My App\backp\MyAppLatest.xml"*/
+/**/
+/*SET RemoteApplicationTest="C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\ApplicationTest\builds"*/
+/*SET newestApplicationTest=""*/
+/**/
+/*for /f %%a in ('dir %RemoteApplicationTest% /b /od') do (if NOT %%a=="latest" SET newestApplicationTest=%%a)*/
+/**/
+/*copy "C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\ApplicationTest\builds\%newestApplicationTest%\build.xml" "C:\Users\Navneet177863\Documents\Jenkins My App\backp\ApplicationTestLatest.xml"*/
+/**/
+/*SET RemoteFitnesseTest="C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\FitNesseTest\builds"*/
+/*SET newestFitnesseTest=""*/
+/**/
+/*for /f %%a in ('dir %RemoteFitnesseTest% /b /od') do (if NOT %%a=="latest" SET newestFitnesseTest=%%a)*/
+/**/
+/*copy "C:\ProgramData\Jenkins\.jenkins\jobs\Appian Deployment\jobs\FitNesseTest\builds\%newestFitnesseTest%\build.xml" "C:\Users\Navneet177863\Documents\Jenkins My App\backp\FitnesseTestLatest.xml"*/</definition>
         <preferredEditor>legacy</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
     </rule>
@@ -55,5 +78,6 @@
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751831"/>
         <historyInfo versionUuid="_a-0000ebcc-38db-8000-9bfd-011c48011c48_751873"/>
         <historyInfo versionUuid="_a-0000ec20-447b-8000-9c00-011c48011c48_758046"/>
+        <historyInfo versionUuid="_a-0000ec20-447b-8000-9c00-011c48011c48_758436"/>
     </history>
 </contentHaul>
